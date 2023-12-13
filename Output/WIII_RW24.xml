@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maps>
+    <Map Type="System" Name="WIII_RW24" Priority="3" Center="-6.123611+106.661111">
+        <Runway Name="24">
+            <Threshold Name="06" Position="-6.113886+106.644592" />
+            <Threshold Name="07L" Position="-6.121017+106.638825" />
+            <Threshold Name="07R" Position="-6.142558+106.643661" />
+            <Threshold Name="24" Position="-6.103842+106.669767" ExtendedCentrelineTrack="245.38" ExtendedCentrelineLength="12" ExtendedCentrelineTickInterval="1" />
+            <Threshold Name="25L" Position="-6.130303+106.674394" />
+            <Threshold Name="25R" Position="-6.108964+106.669061" />
+        </Runway>
+    </Map>
+</Maps>
