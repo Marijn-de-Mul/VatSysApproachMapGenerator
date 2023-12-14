@@ -91,7 +91,10 @@ for i, line in enumerate(lines):
                     threshold_elem1.set("Name", r_number)
                     threshold_elem1.set("Position", r_coords)
                     opposite_r_heading = get_opposite_heading(r_heading)  
-                    threshold_elem1.set("ExtendedCentrelineTrack=", str(opposite_r_heading))  
+                    threshold_elem1.set("ExtendedCentrelineTrack", str(opposite_r_heading))  
+                    threshold_elem1.set("ExtendedCentrelineLength", "12")
+                    threshold_elem1.set("ExtendedCentrelineWidth", "1")
+                    threshold_elem1.set("ExtendedCentrelineTickInterval", "1")
 
                     opposite_r_number = opposite_runway_number(r_number)
                     opposite_r_coords = ''
@@ -109,6 +112,7 @@ for i, line in enumerate(lines):
                     
             with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
                 sid_lines = f.readlines()
+                star_lines = f.readlines()
 
             added_waypoints = set()
 
@@ -129,7 +133,8 @@ for i, line in enumerate(lines):
                         if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):  
                             waypoint_parts = waypoint.split(',')
                             waypoint_name = waypoint_parts[1]  
-                            line_elem.text += waypoint_name + '/'
+                            if waypoint_name != '0':  # Check if the waypoint name is '0'
+                                line_elem.text += waypoint_name + '/'
 
                     if line_elem.text.endswith('/'):
                         line_elem.text = line_elem.text[:-1]

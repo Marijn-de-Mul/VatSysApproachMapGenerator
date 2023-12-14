@@ -2,38 +2,38 @@
 <Maps>
     <Map Type="System" Name="WIII_RW24" Priority="3" Center="-06.1236+106.6611">
         <Runway Name="24">
-            <Threshold Name="24" Position="-06.1038+106.6698" ExtendedCentrelineTrack=="67" />
+            <Threshold Name="24" Position="-06.1038+106.6698" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
             <Threshold Name="06" Position="-06.1139+106.6446" />
         </Runway>
         <!--SID: ABAS2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
         <!--SID: AKSO2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/INVOD/AKSOX</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/INVOD/AKSOX</Line>
         <!--SID: AMBO2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TIKHA/AMBOY</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TIKHA/AMBOY</Line>
         <!--SID: BOLA1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/ENPOG/SABUK/BOLAK</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/SABUK/BOLAK</Line>
         <!--SID: CA2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/PEBSU/MUTIA/CA</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/PEBSU/MUTIA/CA</Line>
         <!--SID: DOLT2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/NIPIP/IDUMU/DOLTA</Line>
+        <Line Pattern="Dotted">UBNAV/NIPIP/IDUMU/DOLTA</Line>
         <!--SID: EGUK2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TEMOM/EGUKO</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TEMOM/EGUKO</Line>
         <!--SID: GOME1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/NIPIP/AGUSO/GOMEL</Line>
+        <Line Pattern="Dotted">UBNAV/NIPIP/AGUSO/GOMEL</Line>
         <!--SID: GUDB1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/GUDBA</Line>
+        <Line Pattern="Dotted">UBNAV/GUDBA</Line>
         <!--SID: GUPU1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/ENPOG/SABUK/GUPUB</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/SABUK/GUPUB</Line>
         <!--SID: IGBO1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/NIPIP/IGBOR</Line>
+        <Line Pattern="Dotted">UBNAV/NIPIP/IGBOR</Line>
         <!--SID: IMAB1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/ENPOG/IMABA</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/IMABA</Line>
         <!--SID: PW2K, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/ENPOG/PW</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/PW</Line>
         <!--SID: REND1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/AJUNA/RUNOV/ENPOG/RENDA</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/RENDA</Line>
         <!--SID: RIMT1D, Runway: 24-->
-        <Line Pattern="Dotted">0/UBNAV/NIPIP/RIMTI</Line>
+        <Line Pattern="Dotted">UBNAV/NIPIP/RIMTI</Line>
     </Map>
 </Maps>
