@@ -35,13 +35,5 @@
         <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/RENDA</Line>
         <!--SID: RIMT1D, Runway: 24-->
         <Line Pattern="Dotted">UBNAV/NIPIP/RIMTI</Line>
-        <!--STAR: AMBO2M, Runway: 24-->
-        <Line Pattern="Dotted">DENDY/BORPO/LUVAX/BIBMI/PRIOK</Line>
-        <!--STAR: BIDA1B, Runway: 24-->
-        <Line Pattern="Dotted">BUNIK/RAMAL/LUVAX/BIBMI/PRIOK</Line>
-        <!--STAR: BUNI2M, Runway: 24-->
-        <Line Pattern="Dotted">RAMAL/LUVAX/BIBMI/PRIOK</Line>
-        <!--STAR: TKG2M, Runway: 24-->
-        <Line Pattern="Dotted">BAMNI/BIDOV/CARTA/LUVAX/BIBMI/PRIOK</Line>
     </Map>
 </Maps>
