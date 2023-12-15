@@ -112,10 +112,8 @@ for i, line in enumerate(lines):
                     
             with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
                 sid_lines = f.readlines()
-                star_lines = f.readlines()
 
-            added_waypoints = set()
-
+            # For SIDs
             for sid_line in sid_lines:
                 sid_parts = sid_line.split(',')
                 if sid_parts[0] == 'SID' and sid_parts[2].rstrip('LRC') == runway_number:
@@ -138,7 +136,34 @@ for i, line in enumerate(lines):
 
                     if line_elem.text.endswith('/'):
                         line_elem.text = line_elem.text[:-1]
-                                
+
+            with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                star_lines = f.readlines()
+
+            # For STARs
+            for star_line in star_lines:
+                star_parts = star_line.split(',')
+                if star_parts[0] == 'STAR' and star_parts[2].rstrip('LRC') == runway_number:
+                    star_name = star_parts[1]
+                    comment = ET.Comment(f'STAR: {star_name}, Runway: {runway_number}')
+                    map_elem.append(comment)
+                    line_elem = ET.SubElement(map_elem, "Line")
+                    line_elem.set("Pattern", "Dotted")
+                    line_elem.text = ''
+
+                    waypoints = star_lines[star_lines.index(star_line)+1:]
+                    for waypoint in waypoints:
+                        if waypoint.startswith('STAR'):  # Break if we reach the next STAR
+                            break
+                        if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):  # Check if the line is a waypoint line
+                            waypoint_parts = waypoint.split(',')
+                            waypoint_name = waypoint_parts[1]  # Get the waypoint name
+                            if waypoint_name != '0':  # Check if the waypoint name is '0'
+                                line_elem.text += waypoint_name + '/'
+
+                    if line_elem.text.endswith('/'):
+                        line_elem.text = line_elem.text[:-1]
+               
             tree = ET.ElementTree(root)
             ET.indent(root, space="    ")
 

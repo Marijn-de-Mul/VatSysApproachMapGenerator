@@ -35,5 +35,19 @@
         <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/RENDA</Line>
         <!--SID: RIMT1A, Runway: 06-->
         <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/RIMTI</Line>
+        <!--STAR: AKSO2L, Runway: 06-->
+        <Line Pattern="Dotted">OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: EGUK2L, Runway: 06-->
+        <Line Pattern="Dotted">OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IMU2L, Runway: 06-->
+        <Line Pattern="Dotted">TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IPKO2L, Runway: 06-->
+        <Line Pattern="Dotted">ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: KURU2L, Runway: 06-->
+        <Line Pattern="Dotted">IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: LADI1A, Runway: 06-->
+        <Line Pattern="Dotted">DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: TOPA1A, Runway: 06-->
+        <Line Pattern="Dotted">IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
     </Map>
 </Maps>

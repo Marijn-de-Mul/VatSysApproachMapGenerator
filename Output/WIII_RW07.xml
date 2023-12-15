@@ -69,5 +69,27 @@
         <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/RIMTI</Line>
         <!--SID: RIMT1C, Runway: 07-->
         <Line Pattern="Dotted">POROX/SUDUP/OPUSI/NIXOL/KANBO/BIMUL/PARBA/SIPAH/RIMTI</Line>
+        <!--STAR: AKSO2E, Runway: 07-->
+        <Line Pattern="Dotted">OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: AMBO2F, Runway: 07-->
+        <Line Pattern="Dotted">DENDY/BORPO/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS</Line>
+        <!--STAR: BIDA1A, Runway: 07-->
+        <Line Pattern="Dotted">BUNIK/RAMAL/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS</Line>
+        <!--STAR: BUNI2F, Runway: 07-->
+        <Line Pattern="Dotted">RAMAL/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS</Line>
+        <!--STAR: EGUK2E, Runway: 07-->
+        <Line Pattern="Dotted">OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IMU2E, Runway: 07-->
+        <Line Pattern="Dotted">TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IPKO2E, Runway: 07-->
+        <Line Pattern="Dotted">ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: KURU2E, Runway: 07-->
+        <Line Pattern="Dotted">IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: LADI1B, Runway: 07-->
+        <Line Pattern="Dotted">DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: TKG2F, Runway: 07-->
+        <Line Pattern="Dotted">BAMNI/BIDOV/CARTA/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS</Line>
+        <!--STAR: TOPA1B, Runway: 07-->
+        <Line Pattern="Dotted">IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
     </Map>
 </Maps>
