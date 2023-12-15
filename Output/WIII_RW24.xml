@@ -6,7 +6,7 @@
             <Threshold Name="06" Position="-06.1139+106.6446"/>
         </Runway>
         <!--SID: ABAS2K, Runway: 24-->
-        <Line Pattern="Dotted">-06.1038+106.6698/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
         <!--SID: AKSO2K, Runway: 24-->
         <Line Pattern="Dotted">IDRIN/ISNED/INVOD/AKSOX</Line>
         <!--SID: AMBO2K, Runway: 24-->
@@ -35,5 +35,77 @@
         <Line Pattern="Dotted">ENPOG/RENDA</Line>
         <!--SID: RIMT1D, Runway: 24-->
         <Line Pattern="Dotted">NIPIP/RIMTI</Line>
+        <Symbol Type="SolidTriangle">
+            <Point>AJUNA</Point>
+            <Point>RATIH</Point>
+            <Point>CA</Point>
+            <Point>RENDA</Point>
+            <Point>MUTIA</Point>
+            <Point>AMBOY</Point>
+            <Point>SABUK</Point>
+            <Point>PEBSU</Point>
+            <Point>DOLTA</Point>
+            <Point>IGBOR</Point>
+            <Point>GOMEL</Point>
+            <Point>IMABA</Point>
+            <Point>IDUMU</Point>
+            <Point>GUPUB</Point>
+            <Point>PW</Point>
+            <Point>SUBUR</Point>
+            <Point>IDRIN</Point>
+            <Point>GUDBA</Point>
+            <Point>AKSOX</Point>
+            <Point>NIPIP</Point>
+            <Point>EGUKO</Point>
+            <Point>ENPOG</Point>
+            <Point>TEMOM</Point>
+            <Point>ABASA</Point>
+            <Point>RIMTI</Point>
+            <Point>INVOD</Point>
+            <Point>NUPTU</Point>
+            <Point>TIKHA</Point>
+            <Point>BOLAK</Point>
+            <Point>RUNOV</Point>
+            <Point>AGUSO</Point>
+            <Point>ISNED</Point>
+            <Point>UBNAV</Point>
+        </Symbol>
+    </Map>
+    <Map Type="System" Name="WIII_RW24_NAMES" Priority="3" Center="-06.1236+106.6611">
+        <Label>
+            <Point>AJUNA</Point>
+            <Point>RATIH</Point>
+            <Point>CA</Point>
+            <Point>RENDA</Point>
+            <Point>MUTIA</Point>
+            <Point>AMBOY</Point>
+            <Point>SABUK</Point>
+            <Point>PEBSU</Point>
+            <Point>DOLTA</Point>
+            <Point>IGBOR</Point>
+            <Point>GOMEL</Point>
+            <Point>IMABA</Point>
+            <Point>IDUMU</Point>
+            <Point>GUPUB</Point>
+            <Point>PW</Point>
+            <Point>SUBUR</Point>
+            <Point>IDRIN</Point>
+            <Point>GUDBA</Point>
+            <Point>AKSOX</Point>
+            <Point>NIPIP</Point>
+            <Point>EGUKO</Point>
+            <Point>ENPOG</Point>
+            <Point>TEMOM</Point>
+            <Point>ABASA</Point>
+            <Point>RIMTI</Point>
+            <Point>INVOD</Point>
+            <Point>NUPTU</Point>
+            <Point>TIKHA</Point>
+            <Point>BOLAK</Point>
+            <Point>RUNOV</Point>
+            <Point>AGUSO</Point>
+            <Point>ISNED</Point>
+            <Point>UBNAV</Point>
+        </Label>
     </Map>
 </Maps>

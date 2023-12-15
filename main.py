@@ -158,6 +158,8 @@ for i, line in enumerate(lines):
                 with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
                     sid_lines = f.readlines()
 
+                all_waypoints = set()
+
                 for sid_line in sid_lines:
                     sid_parts = sid_line.split(',')
                     if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
@@ -166,20 +168,38 @@ for i, line in enumerate(lines):
                         map_elem.append(comment)
                         line_elem = ET.SubElement(map_elem, "Line")
                         line_elem.set("Pattern", "Dotted")
-                        line_elem.text = r_coords + '/'  
+                        line_elem.text = opposite_r_coords + '/'
 
                         waypoints = sid_lines[sid_lines.index(sid_line)+1:]
                         for waypoint in waypoints:
-                            if waypoint.startswith('SID'):
+                            if waypoint.startswith('SID') or waypoint == waypoints[-1]:  # Break the loop if another 'SID' is found or if it's the last line
                                 break
                             if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
                                 waypoint_parts = waypoint.split(',')
                                 waypoint_name = waypoint_parts[1]
                                 if waypoint_name != '0':
                                     line_elem.text += waypoint_name + '/'
+                                    all_waypoints.add(waypoint_name)  
 
                         if line_elem.text.endswith('/'):
                             line_elem.text = line_elem.text[:-1]
+
+                symbol_elem = ET.SubElement(map_elem, "Symbol")
+                symbol_elem.set("Type", "SolidTriangle")
+                for waypoint in all_waypoints:  
+                    point_elem = ET.SubElement(symbol_elem, "Point")
+                    point_elem.text = waypoint
+
+                map_elem_names = ET.SubElement(root, "Map")
+                map_elem_names.set("Type", "System")
+                map_elem_names.set("Name", f"{icao}_RW{r_number}_NAMES")
+                map_elem_names.set("Priority", "3")
+                map_elem_names.set("Center", airport_coords)
+
+                symbol_elem_names = ET.SubElement(map_elem_names, "Label")
+                for waypoint in all_waypoints:  
+                    point_elem = ET.SubElement(symbol_elem_names, "Point")
+                    point_elem.text = waypoint
 
                 tree = ET.ElementTree(root)
                 ET.indent(root, space="    ")
