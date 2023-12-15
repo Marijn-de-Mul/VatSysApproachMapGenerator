@@ -1,73 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" ?>
 <Maps>
     <Map Type="System" Name="WIII_RW25" Priority="3" Center="-06.1236+106.6611">
         <Runway Name="25L">
-            <Threshold Name="25L" Position="-06.1303+106.6744" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
-            <Threshold Name="07R" Position="-06.1426+106.6437" />
+            <Threshold Name="25L" Position="-06.1303+106.6744" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="07R" Position="-06.1426+106.6437"/>
         </Runway>
         <Runway Name="25R">
-            <Threshold Name="25R" Position="-06.1090+106.6691" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
-            <Threshold Name="07L" Position="-06.1210+106.6388" />
+            <Threshold Name="25R" Position="-06.1090+106.6691" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="07L" Position="-06.1210+106.6388"/>
         </Runway>
         <!--SID: ABAS2C, Runway: 25-->
         <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/LEMAG/RATIH/IDRIN/SUBUR/ABASA</Line>
         <!--SID: ABAS2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/SUBUR/NUPTU/ABASA</Line>
         <!--SID: AKSO2C, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/LEMAG/RATIH/IDRIN/ISNED/INVOD/AKSOX</Line>
+        <Line Pattern="Dotted">IDRIN/ISNED/INVOD/AKSOX</Line>
         <!--SID: AKSO2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/INVOD/AKSOX</Line>
+        <Line Pattern="Dotted">AKSOX</Line>
         <!--SID: AMBO2C, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/LEMAG/RATIH/IDRIN/ISNED/TIKHA/AMBOY</Line>
+        <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
         <!--SID: AMBO2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TIKHA/AMBOY</Line>
+        <Line Pattern="Dotted">AMBOY</Line>
         <!--SID: BOLA1E, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/ORATU/BOLAK</Line>
+        <Line Pattern="Dotted">ATOTO/HLM/NUREN/ORATU/BOLAK</Line>
         <!--SID: BOLA1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/SABUK/BOLAK</Line>
+        <Line Pattern="Dotted">RUNOV/ENPOG/SABUK/BOLAK</Line>
         <!--SID: CA2C, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/PW/ASIPA/CA</Line>
+        <Line Pattern="Dotted">NUREN/PW/ASIPA/CA</Line>
         <!--SID: CA2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/PEBSU/MUTIA/CA</Line>
+        <Line Pattern="Dotted">RUNOV/PEBSU/MUTIA/CA</Line>
         <!--SID: DOLT2C, Runway: 25-->
         <Line Pattern="Dotted">ISLIN/SAVIA/NIPIP/IDUMU/DOLTA</Line>
         <!--SID: DOLT2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/NIPIP/IDUMU/DOLTA</Line>
+        <Line Pattern="Dotted">UBNAV/DOLTA</Line>
         <!--SID: EGUK2C, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/LEMAG/RATIH/IDRIN/ISNED/TEMOM/EGUKO</Line>
+        <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
         <!--SID: EGUK2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TEMOM/EGUKO</Line>
+        <Line Pattern="Dotted">EGUKO</Line>
         <!--SID: GOME1E, Runway: 25-->
-        <Line Pattern="Dotted">ISLIN/SAVIA/NIPIP/AGUSO/GOMEL</Line>
+        <Line Pattern="Dotted">NIPIP/AGUSO/GOMEL</Line>
         <!--SID: GOME1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/NIPIP/AGUSO/GOMEL</Line>
+        <Line Pattern="Dotted">GOMEL</Line>
         <!--SID: GUDB1E, Runway: 25-->
         <Line Pattern="Dotted">ISLIN/KIKIB/GUDBA</Line>
         <!--SID: GUDB1F, Runway: 25-->
         <Line Pattern="Dotted">UBNAV/GUDBA</Line>
         <!--SID: GUPU1E, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/ORATU/GUPUB</Line>
+        <Line Pattern="Dotted">ORATU/GUPUB</Line>
         <!--SID: GUPU1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/SABUK/GUPUB</Line>
+        <Line Pattern="Dotted">SABUK/GUPUB</Line>
         <!--SID: IGBO1E, Runway: 25-->
-        <Line Pattern="Dotted">ISLIN/SAVIA/NIPIP/IGBOR</Line>
+        <Line Pattern="Dotted">NIPIP/IGBOR</Line>
         <!--SID: IGBO1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/NIPIP/IGBOR</Line>
+        <Line Pattern="Dotted">IGBOR</Line>
         <!--SID: IMAB1E, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/IMABA</Line>
+        <Line Pattern="Dotted">NUREN/IMABA</Line>
         <!--SID: IMAB1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/IMABA</Line>
+        <Line Pattern="Dotted">ENPOG/IMABA</Line>
         <!--SID: PW2C, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/PW</Line>
+        <Line Pattern="Dotted">PW</Line>
         <!--SID: PW2D, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/PW</Line>
+        <Line Pattern="Dotted">ENPOG/PW</Line>
         <!--SID: REND1E, Runway: 25-->
-        <Line Pattern="Dotted">BEMLO/OLPIK/ATOTO/HLM/NUREN/RENDA</Line>
+        <Line Pattern="Dotted">NUREN/RENDA</Line>
         <!--SID: REND1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/ENPOG/RENDA</Line>
+        <Line Pattern="Dotted">ENPOG/RENDA</Line>
         <!--SID: RIMT1E, Runway: 25-->
-        <Line Pattern="Dotted">ISLIN/KIKIB/RIMTI</Line>
+        <Line Pattern="Dotted">KIKIB/RIMTI</Line>
         <!--SID: RIMT1F, Runway: 25-->
-        <Line Pattern="Dotted">UBNAV/NIPIP/RIMTI/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/OLDUN/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/DENDY/BORPO/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/DENDY/BORPO/LUVAX/BIBMI/PRIOK/DENDY/BORPO/LUVAX/BIBMI/PRIOK/BUNIK/RAMAL/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/BUNIK/RAMAL/LUVAX/BIBMI/PRIOK/BUNIK/RAMAL/LUVAX/BIBMI/PRIOK/RAMAL/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/RAMAL/LUVAX/BIBMI/PRIOK/RAMAL/LUVAX/BIBMI/PRIOK/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/OLDUN/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/TESAP/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/BAMNI/BIDOV/CARTA/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/BAMNI/BIDOV/CARTA/LUVAX/BIBMI/PRIOK/BAMNI/BIDOV/CARTA/LUVAX/BIBMI/PRIOK/IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/RUTGU/OBGEG/ODBAN/FF07L/RW07L/IBUVO/LUVAX/KOTAB/FF07R/RW07R/OBGEG/UBNUX/UGSEL/FF25L/RW25L/BEMLO/OLPIK/ATOTO/LEMAG/IRVOP/UBNUX/ARKAP/FF25R/RW25R/TIKAM/LUVAX/KILIG/LAXOX/RW06/IBUVO/LUVAX/ODBAN/NEGLA/RW07L/IBUVO/LUVAX/KOTAB/GULEX/RW07R/OBGEG/UBNUX/MILEA/LUXAT/NOBOS/RW24/TIKAM/LUVAX/UGSEL/LEKOT/POROX/RW25L/BEMLO/OLPIK/ATOTO/LEMAG/IRVOP/UBNUX/ARKAP/INSTO/RUROM/RW25R/TIKAM/LUVAX</Line>
+        <Line Pattern="Dotted">NIPIP/RIMTI/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/UBNUX/RUTGU/OBGEG/NININ/DENDY/BORPO/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/LUVAX/BIBMI/PRIOK/PRIOK/BUNIK/RAMAL/OLPAS/PRIOK/OLPAS/PRIOK/NININ/TESAP/OBGEG/NININ/ASORI/IMU/OBGEG/NININ/OBGEG/NININ/DONLI/OBGEG/BAMNI/BIDOV/CARTA/OLPAS/PRIOK/PRIOK/IDKUR/NININ/OBGEG/ODBAN/FF07L/RW07L/IBUVO/LUVAX/KOTAB/FF07R/RW07R/OBGEG/UBNUX/UGSEL/FF25L/RW25L/LEMAG/IRVOP/UBNUX/ARKAP/FF25R/RW25R/TIKAM/LUVAX/KILIG/LAXOX/RW06/LUVAX/ODBAN/NEGLA/KOTAB/GULEX/UBNUX/MILEA/LUXAT/NOBOS/RW24/LUVAX/UGSEL/LEKOT/POROX/ARKAP/INSTO/RUROM/LUVAX</Line>
     </Map>
 </Maps>

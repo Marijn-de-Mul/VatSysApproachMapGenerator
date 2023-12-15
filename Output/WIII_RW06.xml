@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" ?>
 <Maps>
     <Map Type="System" Name="WIII_RW06" Priority="3" Center="-06.1236+106.6611">
         <Runway Name="06">
-            <Threshold Name="06" Position="-06.1139+106.6446" ExtendedCentrelineTrack="247" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
-            <Threshold Name="24" Position="-06.1038+106.6698" />
+            <Threshold Name="06" Position="-06.1139+106.6446" ExtendedCentrelineTrack="247" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="24" Position="-06.1038+106.6698"/>
         </Runway>
         <!--SID: ABAS2J, Runway: 06-->
         <Line Pattern="Dotted">ESTIA/ANDIS/SUBUR/ABASA</Line>
         <!--SID: AKSO2J, Runway: 06-->
         <Line Pattern="Dotted">ESTIA/RUMTO/IKEGU/ISNED/INVOD/AKSOX</Line>
         <!--SID: AMBO2J, Runway: 06-->
-        <Line Pattern="Dotted">ESTIA/RUMTO/IKEGU/ISNED/TIKHA/AMBOY</Line>
+        <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
         <!--SID: BOLA1A, Runway: 06-->
         <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/BOLAK</Line>
         <!--SID: CA2J, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/MUTIA/CA</Line>
+        <Line Pattern="Dotted">TATIK/MUTIA/CA</Line>
         <!--SID: DOLT2J, Runway: 06-->
         <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/IDUMU/DOLTA</Line>
         <!--SID: EGUK2J, Runway: 06-->
-        <Line Pattern="Dotted">ESTIA/RUMTO/IKEGU/ISNED/TEMOM/EGUKO</Line>
+        <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
         <!--SID: GOME1A, Runway: 06-->
-        <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/AGUSO/GOMEL</Line>
+        <Line Pattern="Dotted">NIPIP/AGUSO/GOMEL</Line>
         <!--SID: GUDB1A, Runway: 06-->
-        <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/GUDBA</Line>
+        <Line Pattern="Dotted">NIPIP/GUDBA</Line>
         <!--SID: GUPU1A, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/GUPUB</Line>
+        <Line Pattern="Dotted">IDNAP/GUPUB</Line>
         <!--SID: IGBO1A, Runway: 06-->
-        <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/IGBOR</Line>
+        <Line Pattern="Dotted">NIPIP/IGBOR</Line>
         <!--SID: IMAB1A, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/IMABA</Line>
+        <Line Pattern="Dotted">IDNAP/IMABA</Line>
         <!--SID: PW2J, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/PW</Line>
+        <Line Pattern="Dotted">IDNAP/PW</Line>
         <!--SID: REND1A, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/RENDA</Line>
+        <Line Pattern="Dotted">IDNAP/RENDA</Line>
         <!--SID: RIMT1A, Runway: 06-->
-        <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/RIMTI</Line>
+        <Line Pattern="Dotted">NIPIP/RIMTI</Line>
     </Map>
 </Maps>

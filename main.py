@@ -1,6 +1,8 @@
 import os
 import xml.etree.ElementTree as ET
 import argparse
+from xml.dom import minidom
+import re
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--icao', type=str, required=True, help='4 letter ICAO code')
@@ -47,6 +49,44 @@ def get_opposite_heading(heading):
         return heading + 180
     else:
         return heading - 180
+
+def prettify_xml(xml_str):
+    parsed = minidom.parseString(xml_str)
+    lines = parsed.toprettyxml(indent="    ").split('\n')
+    non_empty_lines = [line for line in lines if line.strip()]
+    return '\n'.join(non_empty_lines)
+
+def remove_duplicate_segments(file_path):
+    # Read the XML file
+    with open(file_path, 'rb') as f:
+        xml_string = f.read()
+
+    # Parse the XML string
+    doc = minidom.parseString(xml_string)
+
+    # Get all Line elements
+    lines = doc.getElementsByTagName('Line')
+
+    used_segments = set()
+    for line in lines:
+        waypoints = line.firstChild.data.split('/')
+        new_waypoints = []
+        for i in range(len(waypoints) - 1):
+            segment = (waypoints[i], waypoints[i + 1])
+            if segment not in used_segments:
+                new_waypoints.append(waypoints[i])
+                used_segments.add(segment)
+        # Add the last waypoint
+        if waypoints:
+            new_waypoints.append(waypoints[-1])
+        line.firstChild.data = '/'.join(new_waypoints)
+
+    # Pretty print the XML
+    pretty_xml = prettify_xml(doc.toxml())
+
+    # Write the modified XML back to the file
+    with open(file_path, 'w') as f:
+        f.write(pretty_xml)
 
 for i, line in enumerate(lines):
     line_parts = line.split(',')
@@ -136,11 +176,16 @@ for i, line in enumerate(lines):
                     if line_elem.text.endswith('/'):
                         line_elem.text = line_elem.text[:-1]
                
+
+
             tree = ET.ElementTree(root)
             ET.indent(root, space="    ")
 
             with open(file_path, 'wb') as f:
                 f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
                 tree.write(f, encoding='utf-8')
+
+            # Call the function after the XML file has been written
+            remove_duplicate_segments(file_path)
 
         break
