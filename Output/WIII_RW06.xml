@@ -6,17 +6,17 @@
             <Threshold Name="24" Position="-06.1038+106.6698"/>
         </Runway>
         <!--SID: ABAS2J, Runway: 06-->
-        <Line Pattern="Dotted">ESTIA/ANDIS/SUBUR/ABASA</Line>
+        <Line Pattern="Dotted">-06.1139+106.6446/ESTIA/ANDIS/SUBUR/ABASA</Line>
         <!--SID: AKSO2J, Runway: 06-->
         <Line Pattern="Dotted">ESTIA/RUMTO/IKEGU/ISNED/INVOD/AKSOX</Line>
         <!--SID: AMBO2J, Runway: 06-->
         <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
         <!--SID: BOLA1A, Runway: 06-->
-        <Line Pattern="Dotted">ONIKA/TATIK/IDNAP/BOLAK</Line>
+        <Line Pattern="Dotted">-06.1139+106.6446/ONIKA/TATIK/IDNAP/BOLAK</Line>
         <!--SID: CA2J, Runway: 06-->
         <Line Pattern="Dotted">TATIK/MUTIA/CA</Line>
         <!--SID: DOLT2J, Runway: 06-->
-        <Line Pattern="Dotted">RUTIB/AKPEB/PAGSA/NIPIP/IDUMU/DOLTA</Line>
+        <Line Pattern="Dotted">-06.1139+106.6446/RUTIB/AKPEB/PAGSA/NIPIP/IDUMU/DOLTA</Line>
         <!--SID: EGUK2J, Runway: 06-->
         <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
         <!--SID: GOME1A, Runway: 06-->

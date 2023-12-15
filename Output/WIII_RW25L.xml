@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Maps>
+    <Map Type="System" Name="WIII_RW25L" Priority="3" Center="-06.1236+106.6611">
+        <Runway Name="25L">
+            <Threshold Name="25L" Position="-06.1303+106.6744" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="07R" Position="-06.1426+106.6437"/>
+        </Runway>
+        <!--SID: ABAS2C, Runway: 25L-->
+        <Line Pattern="Dotted">-06.1303+106.6744/BEMLO/OLPIK/ATOTO/LEMAG/RATIH/IDRIN/SUBUR/ABASA</Line>
+        <!--SID: AKSO2C, Runway: 25L-->
+        <Line Pattern="Dotted">IDRIN/ISNED/INVOD/AKSOX</Line>
+        <!--SID: AMBO2C, Runway: 25L-->
+        <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
+        <!--SID: BOLA1E, Runway: 25L-->
+        <Line Pattern="Dotted">ATOTO/HLM/NUREN/ORATU/BOLAK</Line>
+        <!--SID: CA2C, Runway: 25L-->
+        <Line Pattern="Dotted">NUREN/PW/ASIPA/CA</Line>
+        <!--SID: DOLT2C, Runway: 25L-->
+        <Line Pattern="Dotted">-06.1303+106.6744/ISLIN/SAVIA/NIPIP/IDUMU/DOLTA</Line>
+        <!--SID: EGUK2C, Runway: 25L-->
+        <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
+        <!--SID: GOME1E, Runway: 25L-->
+        <Line Pattern="Dotted">NIPIP/AGUSO/GOMEL</Line>
+        <!--SID: GUDB1E, Runway: 25L-->
+        <Line Pattern="Dotted">ISLIN/KIKIB/GUDBA</Line>
+        <!--SID: GUPU1E, Runway: 25L-->
+        <Line Pattern="Dotted">ORATU/GUPUB</Line>
+        <!--SID: IGBO1E, Runway: 25L-->
+        <Line Pattern="Dotted">NIPIP/IGBOR</Line>
+        <!--SID: IMAB1E, Runway: 25L-->
+        <Line Pattern="Dotted">NUREN/IMABA</Line>
+        <!--SID: PW2C, Runway: 25L-->
+        <Line Pattern="Dotted">PW</Line>
+        <!--SID: REND1E, Runway: 25L-->
+        <Line Pattern="Dotted">NUREN/RENDA</Line>
+        <!--SID: RIMT1E, Runway: 25L-->
+        <Line Pattern="Dotted">KIKIB/RIMTI</Line>
+    </Map>
+</Maps>

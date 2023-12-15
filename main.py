@@ -57,14 +57,11 @@ def prettify_xml(xml_str):
     return '\n'.join(non_empty_lines)
 
 def remove_duplicate_segments(file_path):
-    # Read the XML file
     with open(file_path, 'rb') as f:
         xml_string = f.read()
 
-    # Parse the XML string
     doc = minidom.parseString(xml_string)
 
-    # Get all Line elements
     lines = doc.getElementsByTagName('Line')
 
     used_segments = set()
@@ -76,15 +73,12 @@ def remove_duplicate_segments(file_path):
             if segment not in used_segments:
                 new_waypoints.append(waypoints[i])
                 used_segments.add(segment)
-        # Add the last waypoint
         if waypoints:
             new_waypoints.append(waypoints[-1])
         line.firstChild.data = '/'.join(new_waypoints)
 
-    # Pretty print the XML
     pretty_xml = prettify_xml(doc.toxml())
 
-    # Write the modified XML back to the file
     with open(file_path, 'w') as f:
         f.write(pretty_xml)
 
@@ -121,71 +115,79 @@ for i, line in enumerate(lines):
                 r_number = r_parts[1]
                 lat, lon = map(float, r_parts[8:10])
                 r_coords = format_position(lat, lon)
-                r_heading = r_parts[2]  
+                r_heading = r_parts[2]
 
-                if r_number.rstrip('LRC') == runway_number:
-                    runway_elem = ET.SubElement(map_elem, "Runway")
-                    runway_elem.set("Name", r_number)
+                file_path = os.path.join(dir_path, f"{icao}_RW{r_number}.xml")
 
-                    threshold_elem1 = ET.SubElement(runway_elem, "Threshold")
-                    threshold_elem1.set("Name", r_number)
-                    threshold_elem1.set("Position", r_coords)
-                    opposite_r_heading = get_opposite_heading(r_heading)  
-                    threshold_elem1.set("ExtendedCentrelineTrack", str(opposite_r_heading))  
-                    threshold_elem1.set("ExtendedCentrelineLength", "12")
-                    threshold_elem1.set("ExtendedCentrelineWidth", "1")
-                    threshold_elem1.set("ExtendedCentrelineTickInterval", "1")
+                if os.path.exists(file_path):
+                    os.remove(file_path)
 
-                    opposite_r_number = opposite_runway_number(r_number)
-                    opposite_r_coords = ''
-                    for opp_r_line in runway_lines:
-                        opp_r_parts = opp_r_line.split(',')
-                        opp_r_number = opp_r_parts[1]
-                        if opp_r_number == opposite_r_number:
-                            lat, lon = map(float, opp_r_parts[8:10])
-                            opposite_r_coords = format_position(lat, lon)
-                            break
+                root = ET.Element("Maps")
+                map_elem = ET.SubElement(root, "Map")
+                map_elem.set("Type", "System")
+                map_elem.set("Name", f"{icao}_RW{r_number}")
+                map_elem.set("Priority", "3")
+                map_elem.set("Center", airport_coords)
 
-                    threshold_elem2 = ET.SubElement(runway_elem, "Threshold")
-                    threshold_elem2.set("Name", opposite_r_number)
-                    threshold_elem2.set("Position", opposite_r_coords)
-                    
-            with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
-                sid_lines = f.readlines()
+                runway_elem = ET.SubElement(map_elem, "Runway")
+                runway_elem.set("Name", r_number)
 
-            for sid_line in sid_lines:
-                sid_parts = sid_line.split(',')
-                if sid_parts[0] == 'SID' and sid_parts[2].rstrip('LRC') == runway_number:
-                    sid_name = sid_parts[1]
-                    comment = ET.Comment(f'SID: {sid_name}, Runway: {runway_number}')
-                    map_elem.append(comment) 
-                    line_elem = ET.SubElement(map_elem, "Line")
-                    line_elem.set("Pattern", "Dotted")
-                    line_elem.text = '' 
+                threshold_elem1 = ET.SubElement(runway_elem, "Threshold")
+                threshold_elem1.set("Name", r_number)
+                threshold_elem1.set("Position", r_coords)
+                opposite_r_heading = get_opposite_heading(r_heading)
+                threshold_elem1.set("ExtendedCentrelineTrack", str(opposite_r_heading))
+                threshold_elem1.set("ExtendedCentrelineLength", "12")
+                threshold_elem1.set("ExtendedCentrelineWidth", "1")
+                threshold_elem1.set("ExtendedCentrelineTickInterval", "1")
 
-                    waypoints = sid_lines[sid_lines.index(sid_line)+1:]
-                    for waypoint in waypoints:
-                        if waypoint.startswith('SID'):  
-                            break
-                        if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):  
-                            waypoint_parts = waypoint.split(',')
-                            waypoint_name = waypoint_parts[1]  
-                            if waypoint_name != '0': 
-                                line_elem.text += waypoint_name + '/'
+                opposite_r_number = opposite_runway_number(r_number)
+                opposite_r_coords = ''
+                for opp_r_line in runway_lines:
+                    opp_r_parts = opp_r_line.split(',')
+                    opp_r_number = opp_r_parts[1]
+                    if opp_r_number == opposite_r_number:
+                        lat, lon = map(float, opp_r_parts[8:10])
+                        opposite_r_coords = format_position(lat, lon)
+                        break
 
-                    if line_elem.text.endswith('/'):
-                        line_elem.text = line_elem.text[:-1]
-               
+                threshold_elem2 = ET.SubElement(runway_elem, "Threshold")
+                threshold_elem2.set("Name", opposite_r_number)
+                threshold_elem2.set("Position", opposite_r_coords)
 
+                with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                    sid_lines = f.readlines()
 
-            tree = ET.ElementTree(root)
-            ET.indent(root, space="    ")
+                for sid_line in sid_lines:
+                    sid_parts = sid_line.split(',')
+                    if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
+                        sid_name = sid_parts[1]
+                        comment = ET.Comment(f'SID: {sid_name}, Runway: {r_number}')
+                        map_elem.append(comment)
+                        line_elem = ET.SubElement(map_elem, "Line")
+                        line_elem.set("Pattern", "Dotted")
+                        line_elem.text = r_coords + '/'  
 
-            with open(file_path, 'wb') as f:
-                f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
-                tree.write(f, encoding='utf-8')
+                        waypoints = sid_lines[sid_lines.index(sid_line)+1:]
+                        for waypoint in waypoints:
+                            if waypoint.startswith('SID'):
+                                break
+                            if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                waypoint_parts = waypoint.split(',')
+                                waypoint_name = waypoint_parts[1]
+                                if waypoint_name != '0':
+                                    line_elem.text += waypoint_name + '/'
 
-            # Call the function after the XML file has been written
-            remove_duplicate_segments(file_path)
+                        if line_elem.text.endswith('/'):
+                            line_elem.text = line_elem.text[:-1]
+
+                tree = ET.ElementTree(root)
+                ET.indent(root, space="    ")
+
+                with open(file_path, 'wb') as f:
+                    f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
+                    tree.write(f, encoding='utf-8')
+
+                remove_duplicate_segments(file_path)
 
         break

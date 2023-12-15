@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Maps>
+    <Map Type="System" Name="WIII_RW25R" Priority="3" Center="-06.1236+106.6611">
+        <Runway Name="25R">
+            <Threshold Name="25R" Position="-06.1090+106.6691" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="07L" Position="-06.1210+106.6388"/>
+        </Runway>
+        <!--SID: ABAS2D, Runway: 25R-->
+        <Line Pattern="Dotted">-06.1090+106.6691/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <!--SID: AKSO2D, Runway: 25R-->
+        <Line Pattern="Dotted">IDRIN/ISNED/INVOD/AKSOX</Line>
+        <!--SID: AMBO2D, Runway: 25R-->
+        <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
+        <!--SID: BOLA1F, Runway: 25R-->
+        <Line Pattern="Dotted">RUNOV/ENPOG/SABUK/BOLAK</Line>
+        <!--SID: CA2D, Runway: 25R-->
+        <Line Pattern="Dotted">RUNOV/PEBSU/MUTIA/CA</Line>
+        <!--SID: DOLT2D, Runway: 25R-->
+        <Line Pattern="Dotted">UBNAV/NIPIP/IDUMU/DOLTA</Line>
+        <!--SID: EGUK2D, Runway: 25R-->
+        <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
+        <!--SID: GOME1F, Runway: 25R-->
+        <Line Pattern="Dotted">NIPIP/AGUSO/GOMEL</Line>
+        <!--SID: GUDB1F, Runway: 25R-->
+        <Line Pattern="Dotted">UBNAV/GUDBA</Line>
+        <!--SID: GUPU1F, Runway: 25R-->
+        <Line Pattern="Dotted">SABUK/GUPUB</Line>
+        <!--SID: IGBO1F, Runway: 25R-->
+        <Line Pattern="Dotted">NIPIP/IGBOR</Line>
+        <!--SID: IMAB1F, Runway: 25R-->
+        <Line Pattern="Dotted">ENPOG/IMABA</Line>
+        <!--SID: PW2D, Runway: 25R-->
+        <Line Pattern="Dotted">ENPOG/PW</Line>
+        <!--SID: REND1F, Runway: 25R-->
+        <Line Pattern="Dotted">ENPOG/RENDA</Line>
+        <!--SID: RIMT1F, Runway: 25R-->
+        <Line Pattern="Dotted">NIPIP/RIMTI/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ/UBNUX/RUTGU/OBGEG/NININ/DENDY/BORPO/LUVAX/EMSEN/KAKAP/DAKAR/OLPAS/LUVAX/BIBMI/PRIOK/PRIOK/BUNIK/RAMAL/OLPAS/PRIOK/OLPAS/PRIOK/NININ/TESAP/OBGEG/NININ/ASORI/IMU/OBGEG/NININ/OBGEG/NININ/DONLI/OBGEG/BAMNI/BIDOV/CARTA/OLPAS/PRIOK/PRIOK/IDKUR/NININ/OBGEG/ODBAN/FF07L/RW07L/IBUVO/LUVAX/KOTAB/FF07R/RW07R/OBGEG/UBNUX/UGSEL/FF25L/RW25L/BEMLO/OLPIK/ATOTO/LEMAG/IRVOP/UBNUX/ARKAP/FF25R/RW25R/TIKAM/LUVAX/KILIG/LAXOX/RW06/LUVAX/ODBAN/NEGLA/KOTAB/GULEX/UBNUX/MILEA/LUXAT/NOBOS/RW24/LUVAX/UGSEL/LEKOT/POROX/ARKAP/INSTO/RUROM/LUVAX</Line>
+    </Map>
+</Maps>

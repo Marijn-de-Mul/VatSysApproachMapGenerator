@@ -6,7 +6,7 @@
             <Threshold Name="06" Position="-06.1139+106.6446"/>
         </Runway>
         <!--SID: ABAS2K, Runway: 24-->
-        <Line Pattern="Dotted">UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <Line Pattern="Dotted">-06.1038+106.6698/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
         <!--SID: AKSO2K, Runway: 24-->
         <Line Pattern="Dotted">IDRIN/ISNED/INVOD/AKSOX</Line>
         <!--SID: AMBO2K, Runway: 24-->

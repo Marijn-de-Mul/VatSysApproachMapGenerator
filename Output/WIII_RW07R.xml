@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<Maps>
+    <Map Type="System" Name="WIII_RW07R" Priority="3" Center="-06.1236+106.6611">
+        <Runway Name="07R">
+            <Threshold Name="07R" Position="-06.1426+106.6437" ExtendedCentrelineTrack="247" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1"/>
+            <Threshold Name="25L" Position="-06.1303+106.6744"/>
+        </Runway>
+        <!--SID: ABAS2B, Runway: 07R-->
+        <Line Pattern="Dotted">-06.1426+106.6437/POROX/OMDAV/TATIK/AZIZA/INDAH/SUBUR/ABASA</Line>
+        <!--SID: AKSO2B, Runway: 07R-->
+        <Line Pattern="Dotted">TATIK/CIELA/ZULDY/ISNED/INVOD/AKSOX</Line>
+        <!--SID: AMBO2B, Runway: 07R-->
+        <Line Pattern="Dotted">ISNED/TIKHA/AMBOY</Line>
+        <!--SID: BOLA1C, Runway: 07R-->
+        <Line Pattern="Dotted">OMDAV/DIYAN/DUGOK/BOLAK</Line>
+        <!--SID: CA2B, Runway: 07R-->
+        <Line Pattern="Dotted">DIYAN/PW/ASIPA/CA</Line>
+        <!--SID: DOLT2B, Runway: 07R-->
+        <Line Pattern="Dotted">POROX/SUDUP/OPUSI/NIXOL/KANBO/BIMUL/PARBA/NIPIP/IDUMU/DOLTA</Line>
+        <!--SID: EGUK2B, Runway: 07R-->
+        <Line Pattern="Dotted">ISNED/TEMOM/EGUKO</Line>
+        <!--SID: GOME1C, Runway: 07R-->
+        <Line Pattern="Dotted">NIPIP/AGUSO/GOMEL</Line>
+        <!--SID: GUDB1C, Runway: 07R-->
+        <Line Pattern="Dotted">PARBA/GUDBA</Line>
+        <!--SID: GUPU1C, Runway: 07R-->
+        <Line Pattern="Dotted">DUGOK/GUPUB</Line>
+        <!--SID: IGBO1C, Runway: 07R-->
+        <Line Pattern="Dotted">PARBA/SIPAH/IGBOR</Line>
+        <!--SID: IMAB1C, Runway: 07R-->
+        <Line Pattern="Dotted">DIYAN/IMABA</Line>
+        <!--SID: PW2B, Runway: 07R-->
+        <Line Pattern="Dotted">PW</Line>
+        <!--SID: REND1C, Runway: 07R-->
+        <Line Pattern="Dotted">DIYAN/RENDA</Line>
+        <!--SID: RIMT1C, Runway: 07R-->
+        <Line Pattern="Dotted">SIPAH/RIMTI</Line>
+    </Map>
+</Maps>
