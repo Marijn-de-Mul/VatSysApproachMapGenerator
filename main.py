@@ -69,7 +69,9 @@ def remove_duplicate_segments(file_path):
         waypoints = line.firstChild.data.split('/')
         new_waypoints = []
         for i in range(len(waypoints) - 1):
-            segment = (waypoints[i], waypoints[i + 1])
+            # Include the comment (SID or STAR name) in the segment
+            comment = line.previousSibling.wholeText.strip()
+            segment = (waypoints[i], waypoints[i + 1], comment)
             if segment not in used_segments:
                 new_waypoints.append(waypoints[i])
                 used_segments.add(segment)
@@ -184,6 +186,33 @@ for i, line in enumerate(lines):
                         if line_elem.text.endswith('/'):
                             line_elem.text = line_elem.text[:-1]
 
+                with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                    star_lines = f.readlines()
+
+                for star_line in star_lines:
+                    star_parts = star_line.split(',')
+                    if star_parts[0] == 'STAR' and star_parts[2] == r_number:
+                        star_name = star_parts[1]
+                        comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
+                        map_elem.append(comment)
+                        line_elem = ET.SubElement(map_elem, "Line")
+                        line_elem.set("Pattern", "Dashed")
+                        line_elem.text = ''  
+
+                        waypoints = star_lines[star_lines.index(star_line)+1:]
+                        for waypoint in waypoints:
+                            if waypoint.startswith('STAR') or waypoint == waypoints[-1]: 
+                                break
+                            if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                waypoint_parts = waypoint.split(',')
+                                waypoint_name = waypoint_parts[1]
+                                if waypoint_name != '0':
+                                    line_elem.text += waypoint_name + '/'
+                                    all_waypoints.add(waypoint_name)
+
+                        if line_elem.text.endswith('/'):
+                            line_elem.text = line_elem.text[:-1]
+
                 symbol_elem = ET.SubElement(map_elem, "Symbol")
                 symbol_elem.set("Type", "SolidTriangle")
                 for waypoint in all_waypoints:  
@@ -208,6 +237,6 @@ for i, line in enumerate(lines):
                     f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
                     tree.write(f, encoding='utf-8')
 
-                remove_duplicate_segments(file_path)
+                #remove_duplicate_segments(file_path)
 
         break
