@@ -191,7 +191,7 @@ for i, line in enumerate(lines):
 
                 for star_line in star_lines:
                     star_parts = star_line.split(',')
-                    if star_parts[0] == 'STAR' and star_parts[2] == r_number:
+                    if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
                         star_name = star_parts[1]
                         comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
                         map_elem.append(comment)
@@ -200,16 +200,18 @@ for i, line in enumerate(lines):
                         line_elem.text = ''  
                         
                         waypoints = star_lines[star_lines.index(star_line)+1:]
+                        used_waypoints = set()
                         for waypoint in waypoints:
-                            if waypoint.startswith('STAR'):  
-                                break
                             waypoint_parts = waypoint.split(',')
                             if len(waypoint_parts) < 2:  
                                 continue
+                            if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
+                                break
                             waypoint_name = waypoint_parts[1]
-                            if waypoint_name != '0':
+                            if waypoint_name != '0' and waypoint_name not in used_waypoints:
                                 line_elem.text += waypoint_name + '/'
                                 all_waypoints.add(waypoint_name)
+                                used_waypoints.add(waypoint_name)
 
                         if line_elem.text.endswith('/'):
                             line_elem.text = line_elem.text[:-1]
