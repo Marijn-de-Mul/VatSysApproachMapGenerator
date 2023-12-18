@@ -198,17 +198,18 @@ for i, line in enumerate(lines):
                         line_elem = ET.SubElement(map_elem, "Line")
                         line_elem.set("Pattern", "Dashed")
                         line_elem.text = ''  
-
+                        
                         waypoints = star_lines[star_lines.index(star_line)+1:]
                         for waypoint in waypoints:
-                            if waypoint.startswith('STAR') or waypoint == waypoints[-1]: 
+                            if waypoint.startswith('STAR'):  
                                 break
-                            if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
-                                waypoint_parts = waypoint.split(',')
-                                waypoint_name = waypoint_parts[1]
-                                if waypoint_name != '0':
-                                    line_elem.text += waypoint_name + '/'
-                                    all_waypoints.add(waypoint_name)
+                            waypoint_parts = waypoint.split(',')
+                            if len(waypoint_parts) < 2:  
+                                continue
+                            waypoint_name = waypoint_parts[1]
+                            if waypoint_name != '0':
+                                line_elem.text += waypoint_name + '/'
+                                all_waypoints.add(waypoint_name)
 
                         if line_elem.text.endswith('/'):
                             line_elem.text = line_elem.text[:-1]

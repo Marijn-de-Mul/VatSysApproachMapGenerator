@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maps>
+    <Map Type="System" Name="WIII_RW07L" Priority="3" Center="-06.1236+106.6611">
+        <Runway Name="07L">
+            <Threshold Name="07L" Position="-06.1210+106.6388" ExtendedCentrelineTrack="247" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
+            <Threshold Name="25R" Position="-06.1090+106.6691" />
+        </Runway>
+        <!--SID: ABAS2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ESTIA/ANDIS/SUBUR/ABASA</Line>
+        <!--SID: AKSO2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ESTIA/RUMTO/IKEGU/ISNED/INVOD/AKSOX</Line>
+        <!--SID: AMBO2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ESTIA/RUMTO/IKEGU/ISNED/TIKHA/AMBOY</Line>
+        <!--SID: BOLA1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/IDNAP/BOLAK</Line>
+        <!--SID: CA2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/MUTIA/CA</Line>
+        <!--SID: DOLT2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/RUTIB/AKPEB/PAGSA/NIPIP/IDUMU/DOLTA</Line>
+        <!--SID: EGUK2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ESTIA/RUMTO/IKEGU/ISNED/TEMOM/EGUKO</Line>
+        <!--SID: GOME1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/RUTIB/AKPEB/PAGSA/NIPIP/AGUSO/GOMEL</Line>
+        <!--SID: GUDB1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/RUTIB/AKPEB/PAGSA/NIPIP/GUDBA</Line>
+        <!--SID: GUPU1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/IDNAP/GUPUB</Line>
+        <!--SID: IGBO1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/RUTIB/AKPEB/PAGSA/NIPIP/IGBOR</Line>
+        <!--SID: IMAB1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/IDNAP/IMABA</Line>
+        <!--SID: PW2A, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/IDNAP/PW</Line>
+        <!--SID: REND1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/ONIKA/TATIK/IDNAP/RENDA</Line>
+        <!--SID: RIMT1B, Runway: 07L-->
+        <Line Pattern="Dotted">-06.1090+106.6691/RUTIB/AKPEB/PAGSA/NIPIP/RIMTI</Line>
+        <!--STAR: AKSO2E, Runway: 07L-->
+        <Line Pattern="Dashed">AKSOX/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: EGUK2E, Runway: 07L-->
+        <Line Pattern="Dashed">EGUKO/OLDUN/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IMU2E, Runway: 07L-->
+        <Line Pattern="Dashed">IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: IPKO2E, Runway: 07L-->
+        <Line Pattern="Dashed">IPKON/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: KURU2E, Runway: 07L-->
+        <Line Pattern="Dashed">KURUS/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: LADI1B, Runway: 07L-->
+        <Line Pattern="Dashed">LADIR/DONLI/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <!--STAR: TOPA1B, Runway: 07L-->
+        <Line Pattern="Dashed">TOPAR/IDKUR/ASORI/IMU/TESAP/IGUNA/SAGAS/UBNUX/DKI/ONILI/PAPAF/ELKIT/NININ</Line>
+        <Symbol Type="SolidTriangle">
+            <Point>MUTIA</Point>
+            <Point>ISNED</Point>
+            <Point>IDNAP</Point>
+            <Point>CA</Point>
+            <Point>ESTIA</Point>
+            <Point>RIMTI</Point>
+            <Point>IGUNA</Point>
+            <Point>IMU</Point>
+            <Point>ELKIT</Point>
+            <Point>ABASA</Point>
+            <Point>KURUS</Point>
+            <Point>RUMTO</Point>
+            <Point>EGUKO</Point>
+            <Point>IDUMU</Point>
+            <Point>TIKHA</Point>
+            <Point>NIPIP</Point>
+            <Point>OLDUN</Point>
+            <Point>DONLI</Point>
+            <Point>RUTIB</Point>
+            <Point>SAGAS</Point>
+            <Point>ANDIS</Point>
+            <Point>TOPAR</Point>
+            <Point>TATIK</Point>
+            <Point>DKI</Point>
+            <Point>TESAP</Point>
+            <Point>AKPEB</Point>
+            <Point>AKSOX</Point>
+            <Point>PAGSA</Point>
+            <Point>IDKUR</Point>
+            <Point>ONILI</Point>
+            <Point>AGUSO</Point>
+            <Point>IKEGU</Point>
+            <Point>GUPUB</Point>
+            <Point>RENDA</Point>
+            <Point>GUDBA</Point>
+            <Point>IPKON</Point>
+            <Point>GOMEL</Point>
+            <Point>ASORI</Point>
+            <Point>LADIR</Point>
+            <Point>IMABA</Point>
+            <Point>IGBOR</Point>
+            <Point>INVOD</Point>
+            <Point>SUBUR</Point>
+            <Point>PW</Point>
+            <Point>BOLAK</Point>
+            <Point>PAPAF</Point>
+            <Point>ONIKA</Point>
+            <Point>AMBOY</Point>
+            <Point>NININ</Point>
+            <Point>UBNUX</Point>
+            <Point>DOLTA</Point>
+            <Point>TEMOM</Point>
+        </Symbol>
+    </Map>
+    <Map Type="System" Name="WIII_RW07L_NAMES" Priority="3" Center="-06.1236+106.6611">
+        <Label>
+            <Point>MUTIA</Point>
+            <Point>ISNED</Point>
+            <Point>IDNAP</Point>
+            <Point>CA</Point>
+            <Point>ESTIA</Point>
+            <Point>RIMTI</Point>
+            <Point>IGUNA</Point>
+            <Point>IMU</Point>
+            <Point>ELKIT</Point>
+            <Point>ABASA</Point>
+            <Point>KURUS</Point>
+            <Point>RUMTO</Point>
+            <Point>EGUKO</Point>
+            <Point>IDUMU</Point>
+            <Point>TIKHA</Point>
+            <Point>NIPIP</Point>
+            <Point>OLDUN</Point>
+            <Point>DONLI</Point>
+            <Point>RUTIB</Point>
+            <Point>SAGAS</Point>
+            <Point>ANDIS</Point>
+            <Point>TOPAR</Point>
+            <Point>TATIK</Point>
+            <Point>DKI</Point>
+            <Point>TESAP</Point>
+            <Point>AKPEB</Point>
+            <Point>AKSOX</Point>
+            <Point>PAGSA</Point>
+            <Point>IDKUR</Point>
+            <Point>ONILI</Point>
+            <Point>AGUSO</Point>
+            <Point>IKEGU</Point>
+            <Point>GUPUB</Point>
+            <Point>RENDA</Point>
+            <Point>GUDBA</Point>
+            <Point>IPKON</Point>
+            <Point>GOMEL</Point>
+            <Point>ASORI</Point>
+            <Point>LADIR</Point>
+            <Point>IMABA</Point>
+            <Point>IGBOR</Point>
+            <Point>INVOD</Point>
+            <Point>SUBUR</Point>
+            <Point>PW</Point>
+            <Point>BOLAK</Point>
+            <Point>PAPAF</Point>
+            <Point>ONIKA</Point>
+            <Point>AMBOY</Point>
+            <Point>NININ</Point>
+            <Point>UBNUX</Point>
+            <Point>DOLTA</Point>
+            <Point>TEMOM</Point>
+        </Label>
+    </Map>
+</Maps>

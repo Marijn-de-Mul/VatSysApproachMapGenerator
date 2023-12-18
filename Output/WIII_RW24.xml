@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maps>
+    <Map Type="System" Name="WIII_RW24" Priority="3" Center="-06.1236+106.6611">
+        <Runway Name="24">
+            <Threshold Name="24" Position="-06.1038+106.6698" ExtendedCentrelineTrack="67" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
+            <Threshold Name="06" Position="-06.1139+106.6446" />
+        </Runway>
+        <!--SID: ABAS2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/SUBUR/NUPTU/ABASA</Line>
+        <!--SID: AKSO2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/INVOD/AKSOX</Line>
+        <!--SID: AMBO2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TIKHA/AMBOY</Line>
+        <!--SID: BOLA1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/ENPOG/SABUK/BOLAK</Line>
+        <!--SID: CA2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/PEBSU/MUTIA/CA</Line>
+        <!--SID: DOLT2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/NIPIP/IDUMU/DOLTA</Line>
+        <!--SID: EGUK2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/RATIH/IDRIN/ISNED/TEMOM/EGUKO</Line>
+        <!--SID: GOME1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/NIPIP/AGUSO/GOMEL</Line>
+        <!--SID: GUDB1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/GUDBA</Line>
+        <!--SID: GUPU1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/ENPOG/SABUK/GUPUB</Line>
+        <!--SID: IGBO1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/NIPIP/IGBOR</Line>
+        <!--SID: IMAB1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/ENPOG/IMABA</Line>
+        <!--SID: PW2K, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/ENPOG/PW</Line>
+        <!--SID: REND1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/AJUNA/RUNOV/ENPOG/RENDA</Line>
+        <!--SID: RIMT1D, Runway: 24-->
+        <Line Pattern="Dotted">-06.1139+106.6446/UBNAV/NIPIP/RIMTI</Line>
+        <!--STAR: AMBO2M, Runway: 24-->
+        <Line Pattern="Dashed">AMBOY/DENDY/BORPO/LUVAX/BIBMI/PRIOK</Line>
+        <!--STAR: BIDA1B, Runway: 24-->
+        <Line Pattern="Dashed">BIDAK/BUNIK/RAMAL/LUVAX/BIBMI/PRIOK</Line>
+        <!--STAR: BUNI2M, Runway: 24-->
+        <Line Pattern="Dashed">BUNIK/RAMAL/LUVAX/BIBMI/PRIOK</Line>
+        <!--STAR: TKG2M, Runway: 24-->
+        <Line Pattern="Dashed">TKG/BAMNI/BIDOV/CARTA/LUVAX/BIBMI/PRIOK</Line>
+        <Symbol Type="SolidTriangle">
+            <Point>MUTIA</Point>
+            <Point>ISNED</Point>
+            <Point>CA</Point>
+            <Point>RIMTI</Point>
+            <Point>RAMAL</Point>
+            <Point>ABASA</Point>
+            <Point>EGUKO</Point>
+            <Point>BORPO</Point>
+            <Point>IDUMU</Point>
+            <Point>TIKHA</Point>
+            <Point>NIPIP</Point>
+            <Point>TKG</Point>
+            <Point>BIDOV</Point>
+            <Point>BIBMI</Point>
+            <Point>BAMNI</Point>
+            <Point>UBNAV</Point>
+            <Point>NUPTU</Point>
+            <Point>AKSOX</Point>
+            <Point>ENPOG</Point>
+            <Point>AJUNA</Point>
+            <Point>IDRIN</Point>
+            <Point>RUNOV</Point>
+            <Point>AGUSO</Point>
+            <Point>BIDAK</Point>
+            <Point>BUNIK</Point>
+            <Point>GUPUB</Point>
+            <Point>RENDA</Point>
+            <Point>GUDBA</Point>
+            <Point>GOMEL</Point>
+            <Point>RATIH</Point>
+            <Point>IMABA</Point>
+            <Point>IGBOR</Point>
+            <Point>INVOD</Point>
+            <Point>SUBUR</Point>
+            <Point>PW</Point>
+            <Point>BOLAK</Point>
+            <Point>AMBOY</Point>
+            <Point>DENDY</Point>
+            <Point>LUVAX</Point>
+            <Point>PRIOK</Point>
+            <Point>PEBSU</Point>
+            <Point>SABUK</Point>
+            <Point>CARTA</Point>
+            <Point>DOLTA</Point>
+            <Point>TEMOM</Point>
+        </Symbol>
+    </Map>
+    <Map Type="System" Name="WIII_RW24_NAMES" Priority="3" Center="-06.1236+106.6611">
+        <Label>
+            <Point>MUTIA</Point>
+            <Point>ISNED</Point>
+            <Point>CA</Point>
+            <Point>RIMTI</Point>
+            <Point>RAMAL</Point>
+            <Point>ABASA</Point>
+            <Point>EGUKO</Point>
+            <Point>BORPO</Point>
+            <Point>IDUMU</Point>
+            <Point>TIKHA</Point>
+            <Point>NIPIP</Point>
+            <Point>TKG</Point>
+            <Point>BIDOV</Point>
+            <Point>BIBMI</Point>
+            <Point>BAMNI</Point>
+            <Point>UBNAV</Point>
+            <Point>NUPTU</Point>
+            <Point>AKSOX</Point>
+            <Point>ENPOG</Point>
+            <Point>AJUNA</Point>
+            <Point>IDRIN</Point>
+            <Point>RUNOV</Point>
+            <Point>AGUSO</Point>
+            <Point>BIDAK</Point>
+            <Point>BUNIK</Point>
+            <Point>GUPUB</Point>
+            <Point>RENDA</Point>
+            <Point>GUDBA</Point>
+            <Point>GOMEL</Point>
+            <Point>RATIH</Point>
+            <Point>IMABA</Point>
+            <Point>IGBOR</Point>
+            <Point>INVOD</Point>
+            <Point>SUBUR</Point>
+            <Point>PW</Point>
+            <Point>BOLAK</Point>
+            <Point>AMBOY</Point>
+            <Point>DENDY</Point>
+            <Point>LUVAX</Point>
+            <Point>PRIOK</Point>
+            <Point>PEBSU</Point>
+            <Point>SABUK</Point>
+            <Point>CARTA</Point>
+            <Point>DOLTA</Point>
+            <Point>TEMOM</Point>
+        </Label>
+    </Map>
+</Maps>
