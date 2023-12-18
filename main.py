@@ -56,34 +56,6 @@ def prettify_xml(xml_str):
     non_empty_lines = [line for line in lines if line.strip()]
     return '\n'.join(non_empty_lines)
 
-def remove_duplicate_segments(file_path):
-    with open(file_path, 'rb') as f:
-        xml_string = f.read()
-
-    doc = minidom.parseString(xml_string)
-
-    lines = doc.getElementsByTagName('Line')
-
-    used_segments = set()
-    for line in lines:
-        waypoints = line.firstChild.data.split('/')
-        new_waypoints = []
-        for i in range(len(waypoints) - 1):
-            # Include the comment (SID or STAR name) in the segment
-            comment = line.previousSibling.wholeText.strip()
-            segment = (waypoints[i], waypoints[i + 1], comment)
-            if segment not in used_segments:
-                new_waypoints.append(waypoints[i])
-                used_segments.add(segment)
-        if waypoints:
-            new_waypoints.append(waypoints[-1])
-        line.firstChild.data = '/'.join(new_waypoints)
-
-    pretty_xml = prettify_xml(doc.toxml())
-
-    with open(file_path, 'w') as f:
-        f.write(pretty_xml)
-
 for i, line in enumerate(lines):
     line_parts = line.split(',')
     if line_parts[0] == 'A' and line_parts[1] == icao:
@@ -157,81 +129,90 @@ for i, line in enumerate(lines):
                 threshold_elem2.set("Name", opposite_r_number)
                 threshold_elem2.set("Position", opposite_r_coords)
 
-                with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
-                    sid_lines = f.readlines()
+                try:
+                    with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                        sid_lines = f.readlines()
+                except FileNotFoundError:
+                    sid_lines = []
 
                 all_waypoints = set()
 
-                for sid_line in sid_lines:
-                    sid_parts = sid_line.split(',')
-                    if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
-                        sid_name = sid_parts[1]
-                        comment = ET.Comment(f'SID: {sid_name}, Runway: {r_number}')
-                        map_elem.append(comment)
-                        line_elem = ET.SubElement(map_elem, "Line")
-                        line_elem.set("Pattern", "Dotted")
-                        line_elem.text = opposite_r_coords + '/'
+                if sid_lines:  
+                    for sid_line in sid_lines:
+                        sid_parts = sid_line.split(',')
+                        if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
+                            sid_name = sid_parts[1]
+                            comment = ET.Comment(f'SID: {sid_name}, Runway: {r_number}')
+                            map_elem.append(comment)
+                            line_elem = ET.SubElement(map_elem, "Line")
+                            line_elem.set("Pattern", "Dotted")
+                            line_elem.text = opposite_r_coords + '/'
 
-                        waypoints = sid_lines[sid_lines.index(sid_line)+1:]
-                        for waypoint in waypoints:
-                            if waypoint.startswith('SID') or waypoint == waypoints[-1]:  # Break the loop if another 'SID' is found or if it's the last line
-                                break
-                            if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                            waypoints = sid_lines[sid_lines.index(sid_line)+1:]
+                            for waypoint in waypoints:
+                                if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
+                                    break
+                                if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                    waypoint_parts = waypoint.split(',')
+                                    waypoint_name = waypoint_parts[1]
+                                    if waypoint_name != '0':
+                                        line_elem.text += waypoint_name + '/'
+                                        all_waypoints.add(waypoint_name)  
+
+                            if line_elem.text.endswith('/'):
+                                line_elem.text = line_elem.text[:-1]
+
+                try:
+                    with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                        star_lines = f.readlines()
+                except FileNotFoundError:
+                    star_lines = []
+
+                if star_lines: 
+                    for star_line in star_lines:
+                        star_parts = star_line.split(',')
+                        if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
+                            star_name = star_parts[1]
+                            comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
+                            map_elem.append(comment)
+                            line_elem = ET.SubElement(map_elem, "Line")
+                            line_elem.set("Pattern", "Dashed")
+                            line_elem.text = ''  
+                            
+                            waypoints = star_lines[star_lines.index(star_line)+1:]
+                            used_waypoints = set()
+                            for waypoint in waypoints:
                                 waypoint_parts = waypoint.split(',')
+                                if len(waypoint_parts) < 2:  
+                                    continue
+                                if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
+                                    break
                                 waypoint_name = waypoint_parts[1]
-                                if waypoint_name != '0':
+                                if waypoint_name != '0' and waypoint_name not in used_waypoints:
                                     line_elem.text += waypoint_name + '/'
-                                    all_waypoints.add(waypoint_name)  
+                                    all_waypoints.add(waypoint_name)
+                                    used_waypoints.add(waypoint_name)
 
-                        if line_elem.text.endswith('/'):
-                            line_elem.text = line_elem.text[:-1]
+                            if line_elem.text.endswith('/'):
+                                line_elem.text = line_elem.text[:-1]
 
-                with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
-                    star_lines = f.readlines()
+                if all_waypoints:
+                    symbol_elem = ET.SubElement(map_elem, "Symbol")
+                    symbol_elem.set("Type", "SolidTriangle")
+                    for waypoint in all_waypoints:  
+                        point_elem = ET.SubElement(symbol_elem, "Point")
+                        point_elem.text = waypoint
 
-                for star_line in star_lines:
-                    star_parts = star_line.split(',')
-                    if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
-                        star_name = star_parts[1]
-                        comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
-                        map_elem.append(comment)
-                        line_elem = ET.SubElement(map_elem, "Line")
-                        line_elem.set("Pattern", "Dashed")
-                        line_elem.text = ''  
-                        
-                        waypoints = star_lines[star_lines.index(star_line)+1:]
-                        used_waypoints = set()
-                        for waypoint in waypoints:
-                            waypoint_parts = waypoint.split(',')
-                            if len(waypoint_parts) < 2:  
-                                continue
-                            if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
-                                break
-                            waypoint_name = waypoint_parts[1]
-                            if waypoint_name != '0' and waypoint_name not in used_waypoints:
-                                line_elem.text += waypoint_name + '/'
-                                all_waypoints.add(waypoint_name)
-                                used_waypoints.add(waypoint_name)
+                    map_elem_names = ET.SubElement(root, "Map")
+                    map_elem_names.set("Type", "System")
+                    map_elem_names.set("Name", f"{icao}_RW{r_number}_NAMES")
+                    map_elem_names.set("Priority", "3")
+                    map_elem_names.set("Center", airport_coords)
 
-                        if line_elem.text.endswith('/'):
-                            line_elem.text = line_elem.text[:-1]
-
-                symbol_elem = ET.SubElement(map_elem, "Symbol")
-                symbol_elem.set("Type", "SolidTriangle")
-                for waypoint in all_waypoints:  
-                    point_elem = ET.SubElement(symbol_elem, "Point")
-                    point_elem.text = waypoint
-
-                map_elem_names = ET.SubElement(root, "Map")
-                map_elem_names.set("Type", "System")
-                map_elem_names.set("Name", f"{icao}_RW{r_number}_NAMES")
-                map_elem_names.set("Priority", "3")
-                map_elem_names.set("Center", airport_coords)
-
-                symbol_elem_names = ET.SubElement(map_elem_names, "Label")
-                for waypoint in all_waypoints:  
-                    point_elem = ET.SubElement(symbol_elem_names, "Point")
-                    point_elem.text = waypoint
+                    symbol_elem_names = ET.SubElement(map_elem_names, "Label")
+                    for waypoint in all_waypoints:  
+                        point_elem = ET.SubElement(symbol_elem_names, "Point")
+                        point_elem.text = waypoint
 
                 tree = ET.ElementTree(root)
                 ET.indent(root, space="    ")
@@ -239,7 +220,5 @@ for i, line in enumerate(lines):
                 with open(file_path, 'wb') as f:
                     f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
                     tree.write(f, encoding='utf-8')
-
-                #remove_duplicate_segments(file_path)
 
         break
