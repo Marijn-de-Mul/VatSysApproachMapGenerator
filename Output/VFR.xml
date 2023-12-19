@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<Maps>
+    <Map Type="System" Name="JAVA_VFR" Priority="3" CustomColourName="SuperGreen" Center="-06.1684+106.3679">
+        <Symbol Type="SolidTriangle">
+            <Point>-06.2785+106.6498</Point>
+            <Point>-06.2923+106.5657</Point>
+            <Point>-06.2186+106.4736</Point>
+            <Point>-06.1150+106.1539</Point>
+            <Point>-05.9378+105.9964</Point>
+        </Symbol>
+        <Line>-06.2785+106.6498/-06.2923+106.5657/-06.2186+106.4736/-06.1150+106.1539/-05.9378+105.9964</Line>
+    </Map>
+    <Map Type="System" Name="JAVA_VFR_NAMES" Priority="3" CustomColourName="SuperGreen" Center="-06.1684+106.3679">
+        <Label>
+            <Point Name="GOLFI">-06.2785+106.6498</Point>
+            <Point Name="BUDIT">-06.2923+106.5657</Point>
+            <Point Name="SOBAR">-06.2186+106.4736</Point>
+            <Point Name="ERANG">-06.1150+106.1539</Point>
+            <Point Name="MERAK">-05.9378+105.9964</Point>
+        </Label>
+    </Map>
+</Maps>

@@ -13,15 +13,11 @@ args = parser.parse_args()
 icao = args.icao.upper()
 suicide = args.suicide
 
-suicide_mode = True
-
 dir_path = "Output"
 os.makedirs(dir_path, exist_ok=True)
 
 with open('Navdata/Airports.txt', 'r') as f:
     lines = f.readlines()
-
-import math
 
 def format_position(lat, lon):
     lat_sign = '+' if lat >= 0 else '-'
