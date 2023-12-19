@@ -6,9 +6,13 @@ import re
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--icao', type=str, required=True, help='4 letter ICAO code')
+parser.add_argument('--suicide', type=str)
 args = parser.parse_args()
 
 icao = args.icao.upper()
+suicide = args.suicide
+
+suicide_mode = True
 
 dir_path = "Output"
 os.makedirs(dir_path, exist_ok=True)
@@ -56,6 +60,12 @@ def prettify_xml(xml_str):
     non_empty_lines = [line for line in lines if line.strip()]
     return '\n'.join(non_empty_lines)
 
+def remove_runway_map(): 
+    file_path = os.path.join(dir_path, f"{icao}_RW{opposite_runway_number(suicide)}_RECIP.xml")
+
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
 for i, line in enumerate(lines):
     line_parts = line.split(',')
     if line_parts[0] == 'A' and line_parts[1] == icao:
@@ -72,7 +82,10 @@ for i, line in enumerate(lines):
                 break
 
         for runway_number in unique_runway_numbers:
-            file_path = os.path.join(dir_path, f"{icao}_RW{runway_number}.xml")
+            if suicide != None:
+                file_path = os.path.join(dir_path, f"{icao}_RW{runway_number}_RECIP.xml")
+            else: 
+                file_path = os.path.join(dir_path, f"{icao}_RW{runway_number}.xml")
 
             if os.path.exists(file_path):
                 os.remove(file_path)
@@ -91,7 +104,10 @@ for i, line in enumerate(lines):
                 r_coords = format_position(lat, lon)
                 r_heading = r_parts[2]
 
-                file_path = os.path.join(dir_path, f"{icao}_RW{r_number}.xml")
+                if suicide != None:
+                    file_path = os.path.join(dir_path, f"{icao}_RW{r_number}_RECIP.xml")
+                else: 
+                    file_path = os.path.join(dir_path, f"{icao}_RW{r_number}.xml")
 
                 if os.path.exists(file_path):
                     os.remove(file_path)
@@ -99,7 +115,12 @@ for i, line in enumerate(lines):
                 root = ET.Element("Maps")
                 map_elem = ET.SubElement(root, "Map")
                 map_elem.set("Type", "System")
-                map_elem.set("Name", f"{icao}_RW{r_number}")
+
+                if suicide != None: 
+                    map_elem.set("Name", f"{icao}_RW{r_number}_RECIP")
+                else: 
+                    map_elem.set("Name", f"{icao}_RW{r_number}")
+                
                 map_elem.set("Priority", "3")
                 map_elem.set("Center", airport_coords)
 
@@ -129,72 +150,140 @@ for i, line in enumerate(lines):
                 threshold_elem2.set("Name", opposite_r_number)
                 threshold_elem2.set("Position", opposite_r_coords)
 
-                try:
-                    with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
-                        sid_lines = f.readlines()
-                except FileNotFoundError:
-                    sid_lines = []
+                if suicide != None:
+                    try:
+                        with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                            sid_lines = f.readlines()
+                    except FileNotFoundError:
+                        sid_lines = []
 
-                all_waypoints = set()
+                    all_waypoints = set()
 
-                if sid_lines:  
-                    for sid_line in sid_lines:
-                        sid_parts = sid_line.split(',')
-                        if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
-                            sid_name = sid_parts[1]
-                            comment = ET.Comment(f'SID: {sid_name}, Runway: {r_number}')
-                            map_elem.append(comment)
-                            line_elem = ET.SubElement(map_elem, "Line")
-                            line_elem.set("Pattern", "Dotted")
-                            line_elem.text = opposite_r_coords + '/'
+                    if sid_lines:  
+                        for sid_line in sid_lines:
+                            sid_parts = sid_line.split(',')
+                            if sid_parts[0] == 'SID' and sid_parts[2] == opposite_r_number:
+                                sid_name = sid_parts[1]
+                                comment = ET.Comment(f'SID: {sid_name}, Runway: {opposite_r_number}')
+                                map_elem.append(comment)
+                                line_elem = ET.SubElement(map_elem, "Line")
+                                line_elem.set("Pattern", "Dotted")
+                                line_elem.text = r_coords + '/'
 
-                            waypoints = sid_lines[sid_lines.index(sid_line)+1:]
-                            for waypoint in waypoints:
-                                if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
-                                    break
-                                if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                waypoints = sid_lines[sid_lines.index(sid_line)+1:]
+                                for waypoint in waypoints:
+                                    if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
+                                        break
+                                    if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                        waypoint_parts = waypoint.split(',')
+                                        waypoint_name = waypoint_parts[1]
+                                        if waypoint_name != '0':
+                                            line_elem.text += waypoint_name + '/'
+                                            all_waypoints.add(waypoint_name)  
+
+                                if line_elem.text.endswith('/'):
+                                    line_elem.text = line_elem.text[:-1]
+
+                    try:
+                        with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                            star_lines = f.readlines()
+                    except FileNotFoundError:
+                        star_lines = []
+
+                    if star_lines: 
+                        for star_line in star_lines:
+                            star_parts = star_line.split(',')
+                            if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
+                                star_name = star_parts[1]
+                                comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
+                                map_elem.append(comment)
+                                line_elem = ET.SubElement(map_elem, "Line")
+                                line_elem.set("Pattern", "Dashed")
+                                line_elem.text = ''  
+
+                                waypoints = star_lines[star_lines.index(star_line)+1:]
+                                used_waypoints = set()
+                                for waypoint in waypoints:
                                     waypoint_parts = waypoint.split(',')
+                                    if len(waypoint_parts) < 2:  
+                                        continue
+                                    if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
+                                        break
                                     waypoint_name = waypoint_parts[1]
-                                    if waypoint_name != '0':
+                                    if waypoint_name != '0' and waypoint_name not in used_waypoints:
                                         line_elem.text += waypoint_name + '/'
-                                        all_waypoints.add(waypoint_name)  
+                                        all_waypoints.add(waypoint_name)
+                                        used_waypoints.add(waypoint_name)
 
-                            if line_elem.text.endswith('/'):
-                                line_elem.text = line_elem.text[:-1]
+                                if line_elem.text.endswith('/'):
+                                    line_elem.text = line_elem.text[:-1]
+                else: 
+                    try:
+                        with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                            sid_lines = f.readlines()
+                    except FileNotFoundError:
+                        sid_lines = []
 
-                try:
-                    with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
-                        star_lines = f.readlines()
-                except FileNotFoundError:
-                    star_lines = []
+                    all_waypoints = set()
 
-                if star_lines: 
-                    for star_line in star_lines:
-                        star_parts = star_line.split(',')
-                        if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
-                            star_name = star_parts[1]
-                            comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
-                            map_elem.append(comment)
-                            line_elem = ET.SubElement(map_elem, "Line")
-                            line_elem.set("Pattern", "Dashed")
-                            line_elem.text = ''  
-                            
-                            waypoints = star_lines[star_lines.index(star_line)+1:]
-                            used_waypoints = set()
-                            for waypoint in waypoints:
-                                waypoint_parts = waypoint.split(',')
-                                if len(waypoint_parts) < 2:  
-                                    continue
-                                if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
-                                    break
-                                waypoint_name = waypoint_parts[1]
-                                if waypoint_name != '0' and waypoint_name not in used_waypoints:
-                                    line_elem.text += waypoint_name + '/'
-                                    all_waypoints.add(waypoint_name)
-                                    used_waypoints.add(waypoint_name)
+                    if sid_lines:  
+                        for sid_line in sid_lines:
+                            sid_parts = sid_line.split(',')
+                            if sid_parts[0] == 'SID' and sid_parts[2] == r_number:
+                                sid_name = sid_parts[1]
+                                comment = ET.Comment(f'SID: {sid_name}, Runway: {r_number}')
+                                map_elem.append(comment)
+                                line_elem = ET.SubElement(map_elem, "Line")
+                                line_elem.set("Pattern", "Dotted")
+                                line_elem.text = opposite_r_coords + '/'
 
-                            if line_elem.text.endswith('/'):
-                                line_elem.text = line_elem.text[:-1]
+                                waypoints = sid_lines[sid_lines.index(sid_line)+1:]
+                                for waypoint in waypoints:
+                                    if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
+                                        break
+                                    if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
+                                        waypoint_parts = waypoint.split(',')
+                                        waypoint_name = waypoint_parts[1]
+                                        if waypoint_name != '0':
+                                            line_elem.text += waypoint_name + '/'
+                                            all_waypoints.add(waypoint_name)  
+
+                                if line_elem.text.endswith('/'):
+                                    line_elem.text = line_elem.text[:-1]
+
+                    try:
+                        with open(f'Navdata/Proc/{icao}.txt', 'r') as f:
+                            star_lines = f.readlines()
+                    except FileNotFoundError:
+                        star_lines = []
+
+                    if star_lines: 
+                        for star_line in star_lines:
+                            star_parts = star_line.split(',')
+                            if star_parts[0] == 'STAR' and (star_parts[2] == r_number or star_parts[2] == 'ALL'):
+                                star_name = star_parts[1]
+                                comment = ET.Comment(f'STAR: {star_name}, Runway: {r_number}')
+                                map_elem.append(comment)
+                                line_elem = ET.SubElement(map_elem, "Line")
+                                line_elem.set("Pattern", "Dashed")
+                                line_elem.text = ''  
+                                
+                                waypoints = star_lines[star_lines.index(star_line)+1:]
+                                used_waypoints = set()
+                                for waypoint in waypoints:
+                                    waypoint_parts = waypoint.split(',')
+                                    if len(waypoint_parts) < 2:  
+                                        continue
+                                    if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
+                                        break
+                                    waypoint_name = waypoint_parts[1]
+                                    if waypoint_name != '0' and waypoint_name not in used_waypoints:
+                                        line_elem.text += waypoint_name + '/'
+                                        all_waypoints.add(waypoint_name)
+                                        used_waypoints.add(waypoint_name)
+
+                                if line_elem.text.endswith('/'):
+                                    line_elem.text = line_elem.text[:-1]
 
                 if all_waypoints:
                     symbol_elem = ET.SubElement(map_elem, "Symbol")
@@ -205,7 +294,11 @@ for i, line in enumerate(lines):
 
                     map_elem_names = ET.SubElement(root, "Map")
                     map_elem_names.set("Type", "System")
-                    map_elem_names.set("Name", f"{icao}_RW{r_number}_NAMES")
+                    
+                    if suicide != None:
+                        map_elem_names.set("Name", f"{icao}_RW{r_number}_RECIP_NAMES")
+                    else:    
+                        map_elem_names.set("Name", f"{icao}_RW{r_number}_NAMES")
                     map_elem_names.set("Priority", "3")
                     map_elem_names.set("Center", airport_coords)
 
@@ -220,5 +313,8 @@ for i, line in enumerate(lines):
                 with open(file_path, 'wb') as f:
                     f.write(b'<?xml version="1.0" encoding="utf-8"?>\n')
                     tree.write(f, encoding='utf-8')
+
+                if suicide != None: 
+                    remove_runway_map()
 
         break
