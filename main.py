@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import argparse
 from xml.dom import minidom
 import re
+import math
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--icao', type=str, required=True, help='4 letter ICAO code')
@@ -20,6 +21,8 @@ os.makedirs(dir_path, exist_ok=True)
 with open('Navdata/Airports.txt', 'r') as f:
     lines = f.readlines()
 
+import math
+
 def format_position(lat, lon):
     lat_sign = '+' if lat >= 0 else '-'
     lon_sign = '+' if lon >= 0 else '-'
@@ -28,6 +31,32 @@ def format_position(lat, lon):
     lat_str = f"{lat_sign}{lat:02.4f}".zfill(8)
     lon_str = f"{lon_sign}{lon:03.4f}".zfill(9)
     return f"{lat_str}{lon_str}"
+
+def generate_arc(lat_center, lon_center, start_radial, end_radial, radius, step_degrees=10):
+    lat_center = math.radians(lat_center)
+    lon_center = math.radians(lon_center)
+    start_radial = math.radians(start_radial)
+    end_radial = math.radians(end_radial)
+    radius = radius / 3440.07 
+
+    diff_clockwise = (end_radial - start_radial) % (2 * math.pi)
+    diff_counter_clockwise = (start_radial - end_radial) % (2 * math.pi)
+
+    if diff_clockwise <= diff_counter_clockwise:
+        step_degrees = abs(step_degrees)
+        end_bearing = start_radial + diff_clockwise
+    else:
+        step_degrees = -abs(step_degrees)
+        end_bearing = start_radial - diff_counter_clockwise
+
+    coordinates = []
+    brng = start_radial
+    while (step_degrees > 0 and brng <= end_bearing) or (step_degrees < 0 and brng >= end_bearing):
+        lat = math.asin(math.sin(lat_center) * math.cos(radius) + math.cos(lat_center) * math.sin(radius) * math.cos(brng))
+        lon = lon_center + math.atan2(math.sin(brng) * math.sin(radius) * math.cos(lat_center), math.cos(radius) - math.sin(lat_center) * math.sin(lat))
+        coordinates.append(format_position(math.degrees(lat), math.degrees(lon)))
+        brng += math.radians(step_degrees) 
+    return coordinates
 
 def opposite_runway_number(runway_number):
     runway_number_base = runway_number.rstrip('LRC')
@@ -174,12 +203,16 @@ for i, line in enumerate(lines):
                                 for waypoint in waypoints:
                                     if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
                                         break
+                                    if waypoint.startswith(('AF')): 
+                                        arc_coordinates = generate_arc(lat, lon, float(waypoint_parts[8]), float(waypoint_parts[6]), float(waypoint_parts[7]))  
+                                        for arc_coordinate in arc_coordinates:
+                                            line_elem.text += arc_coordinate + '/'
                                     if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
                                         waypoint_parts = waypoint.split(',')
                                         waypoint_name = waypoint_parts[1]
                                         if waypoint_name != '0':
                                             line_elem.text += waypoint_name + '/'
-                                            all_waypoints.add(waypoint_name)  
+                                            all_waypoints.add(waypoint_name) 
 
                                 if line_elem.text.endswith('/'):
                                     line_elem.text = line_elem.text[:-1]
@@ -210,6 +243,10 @@ for i, line in enumerate(lines):
                                     if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
                                         break
                                     waypoint_name = waypoint_parts[1]
+                                    if waypoint.startswith(('AF')): 
+                                        arc_coordinates = generate_arc(lat, lon, float(waypoint_parts[8]), float(waypoint_parts[6]), float(waypoint_parts[7]))  
+                                        for arc_coordinate in arc_coordinates:
+                                            line_elem.text += arc_coordinate + '/'
                                     if waypoint_name != '0' and waypoint_name not in used_waypoints:
                                         line_elem.text += waypoint_name + '/'
                                         all_waypoints.add(waypoint_name)
@@ -241,6 +278,10 @@ for i, line in enumerate(lines):
                                 for waypoint in waypoints:
                                     if waypoint.startswith('SID') or waypoint == waypoints[-1]:  
                                         break
+                                    if waypoint.startswith(('AF')): 
+                                        arc_coordinates = generate_arc(lat, lon, float(waypoint_parts[8]), float(waypoint_parts[6]), float(waypoint_parts[7]))  
+                                        for arc_coordinate in arc_coordinates:
+                                            line_elem.text += arc_coordinate + '/'
                                     if waypoint.startswith(('VA', 'DF', 'TF', 'CF')):
                                         waypoint_parts = waypoint.split(',')
                                         waypoint_name = waypoint_parts[1]
@@ -277,6 +318,10 @@ for i, line in enumerate(lines):
                                     if waypoint_parts[0] == 'STAR' or waypoint_parts[0] == 'END' or waypoint_parts[0] == 'APPTR':
                                         break
                                     waypoint_name = waypoint_parts[1]
+                                    if waypoint.startswith(('AF')): 
+                                        arc_coordinates = generate_arc(lat, lon, float(waypoint_parts[8]), float(waypoint_parts[6]), float(waypoint_parts[7]))  
+                                        for arc_coordinate in arc_coordinates:
+                                            line_elem.text += arc_coordinate + '/'
                                     if waypoint_name != '0' and waypoint_name not in used_waypoints:
                                         line_elem.text += waypoint_name + '/'
                                         all_waypoints.add(waypoint_name)
