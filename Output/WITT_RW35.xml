@@ -41,51 +41,51 @@
         <Line Pattern="Dotted" CustomColourName="NoiseTurquoise">+05.5391+095.4171/DUAMO/TASEK</Line>
         <!--SID: TASE1D, Runway: 35-->
         <Line Pattern="Dotted" CustomColourName="NoiseTurquoise">+05.5391+095.4171/TEUKU/TT410/DUAMO/TASEK</Line>
-        <Symbol Type="SolidTriangle">
-            <Point>DUAMO</Point>
-            <Point>TT408</Point>
-            <Point>OTKUL</Point>
-            <Point>TT419</Point>
-            <Point>TASEK</Point>
-            <Point>OPUNG</Point>
+        <Symbol Type="SolidTriangle" CustomColourName="LoonyMaroons">
             <Point>TEUKU</Point>
-            <Point>TT410</Point>
-            <Point>AKBUR</Point>
-            <Point>TT407</Point>
-            <Point>AVDIN</Point>
-            <Point>BULVA</Point>
-            <Point>BELRI</Point>
-            <Point>ELDEL</Point>
-            <Point>TT414</Point>
-            <Point>IVRAR</Point>
             <Point>TT411</Point>
-            <Point>ANSAX</Point>
+            <Point>BELRI</Point>
+            <Point>OPUNG</Point>
+            <Point>DUAMO</Point>
+            <Point>TT419</Point>
             <Point>EMREB</Point>
+            <Point>TT414</Point>
+            <Point>TT410</Point>
+            <Point>ELDEL</Point>
+            <Point>BULVA</Point>
+            <Point>TT407</Point>
+            <Point>TASEK</Point>
             <Point>UDODO</Point>
+            <Point>ANSAX</Point>
+            <Point>OTKUL</Point>
+            <Point>AKBUR</Point>
+            <Point>TT408</Point>
+            <Point>AVDIN</Point>
+            <Point>IVRAR</Point>
         </Symbol>
     </Map>
-    <Map Type="System" Name="WITT_RW35_NAMES" Priority="3" Center="+05.5169+095.4200">
+    <Map Type="System" Name="WITT_RW35_NAMES" Priority="3" Center="+05.5169+095.4200" CustomColourName="LoonyMaroons">
         <Label>
-            <Point>DUAMO</Point>
-            <Point>TT408</Point>
-            <Point>OTKUL</Point>
-            <Point>TT419</Point>
-            <Point>TASEK</Point>
-            <Point>OPUNG</Point>
             <Point>TEUKU</Point>
-            <Point>TT410</Point>
-            <Point>AKBUR</Point>
-            <Point>TT407</Point>
-            <Point>AVDIN</Point>
-            <Point>BULVA</Point>
-            <Point>BELRI</Point>
-            <Point>ELDEL</Point>
-            <Point>TT414</Point>
-            <Point>IVRAR</Point>
             <Point>TT411</Point>
-            <Point>ANSAX</Point>
+            <Point>BELRI</Point>
+            <Point>OPUNG</Point>
+            <Point>DUAMO</Point>
+            <Point>TT419</Point>
             <Point>EMREB</Point>
+            <Point>TT414</Point>
+            <Point>TT410</Point>
+            <Point>ELDEL</Point>
+            <Point>BULVA</Point>
+            <Point>TT407</Point>
+            <Point>TASEK</Point>
             <Point>UDODO</Point>
+            <Point>ANSAX</Point>
+            <Point>OTKUL</Point>
+            <Point>AKBUR</Point>
+            <Point>TT408</Point>
+            <Point>AVDIN</Point>
+            <Point>IVRAR</Point>
         </Label>
     </Map>
 </Maps>

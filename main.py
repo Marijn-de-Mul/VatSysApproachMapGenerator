@@ -347,6 +347,10 @@ for i, line in enumerate(lines):
                 if all_waypoints:
                     symbol_elem = ET.SubElement(map_elem, "Symbol")
                     symbol_elem.set("Type", "SolidTriangle")
+
+                    if colourful: 
+                        symbol_elem.set("CustomColourName", "LoonyMaroons")
+                    
                     for waypoint in all_waypoints:  
                         point_elem = ET.SubElement(symbol_elem, "Point")
                         point_elem.text = waypoint
@@ -361,7 +365,11 @@ for i, line in enumerate(lines):
                     map_elem_names.set("Priority", "3")
                     map_elem_names.set("Center", airport_coords)
 
+                    if colourful: 
+                        map_elem_names.set("CustomColourName", "LoonyMaroons")
+
                     symbol_elem_names = ET.SubElement(map_elem_names, "Label")
+
                     for waypoint in all_waypoints:  
                         point_elem = ET.SubElement(symbol_elem_names, "Point")
                         point_elem.text = waypoint

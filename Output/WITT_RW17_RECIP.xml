@@ -77,91 +77,91 @@
         <Line Pattern="Dashed" CustomColourName="MellowYellow">UDOLI/D237T/+05.3501+095.1715/+05.3959+095.1469/+05.4454+095.1308/+05.4968+095.1235/+05.5487+095.1253/+05.5996+095.1361/+05.6478+095.1556/+05.6919+095.1833/+05.7305+095.2182/+05.7625+095.2594/+05.7869+095.3055/+05.8030+095.3552/VAVDO</Line>
         <!--STAR: URDA1A, Runway: 17-->
         <Line Pattern="Dashed" CustomColourName="MellowYellow">URDAM/TENOM/TT424/IRMUS/VAVDO</Line>
-        <Symbol Type="SolidTriangle">
+        <Symbol Type="SolidTriangle" CustomColourName="LoonyMaroons">
             <Point>LAWAH</Point>
-            <Point>VAVDO</Point>
-            <Point>TT425</Point>
-            <Point>TT419</Point>
-            <Point>TT407</Point>
-            <Point>TT411</Point>
-            <Point>TT427</Point>
             <Point>TT424</Point>
+            <Point>TT410</Point>
+            <Point>EMREB</Point>
             <Point>ELDEL</Point>
-            <Point>TT413</Point>
-            <Point>D143T</Point>
             <Point>TEUKU</Point>
+            <Point>TT427</Point>
+            <Point>UPSOL</Point>
+            <Point>BUDGA</Point>
+            <Point>DUAMO</Point>
+            <Point>TT408</Point>
+            <Point>D098T</Point>
+            <Point>D137T</Point>
+            <Point>TT411</Point>
+            <Point>AKBUR</Point>
+            <Point>TT407</Point>
+            <Point>TT425</Point>
             <Point>AKPUM</Point>
+            <Point>D143T</Point>
+            <Point>UDOLI</Point>
             <Point>OTKUL</Point>
             <Point>IVRAR</Point>
             <Point>BELRI</Point>
-            <Point>D123T</Point>
-            <Point>ANSAX</Point>
-            <Point>DUAMO</Point>
-            <Point>UPSOL</Point>
-            <Point>BUDGA</Point>
-            <Point>BULVA</Point>
+            <Point>TT419</Point>
             <Point>TT414</Point>
             <Point>UDODO</Point>
-            <Point>TASEK</Point>
-            <Point>D237T</Point>
             <Point>OPUNG</Point>
-            <Point>D151T</Point>
-            <Point>EMREB</Point>
-            <Point>TT408</Point>
-            <Point>TENOM</Point>
-            <Point>TT409</Point>
+            <Point>D237T</Point>
+            <Point>TT413</Point>
             <Point>IRMUS</Point>
+            <Point>D123T</Point>
+            <Point>D151T</Point>
+            <Point>TT409</Point>
             <Point>AVDIN</Point>
-            <Point>D098T</Point>
-            <Point>D137T</Point>
+            <Point>TASEK</Point>
+            <Point>TENOM</Point>
+            <Point>ANSAX</Point>
             <Point>URDAM</Point>
-            <Point>UDOLI</Point>
-            <Point>TT410</Point>
-            <Point>AKBUR</Point>
+            <Point>VAVDO</Point>
+            <Point>BULVA</Point>
         </Symbol>
     </Map>
-    <Map Type="System" Name="WITT_RW17_RECIP_NAMES" Priority="3" Center="+05.5169+095.4200">
+    <Map Type="System" Name="WITT_RW17_RECIP_NAMES" Priority="3" Center="+05.5169+095.4200" CustomColourName="LoonyMaroons">
         <Label>
             <Point>LAWAH</Point>
-            <Point>VAVDO</Point>
-            <Point>TT425</Point>
-            <Point>TT419</Point>
-            <Point>TT407</Point>
-            <Point>TT411</Point>
-            <Point>TT427</Point>
             <Point>TT424</Point>
+            <Point>TT410</Point>
+            <Point>EMREB</Point>
             <Point>ELDEL</Point>
-            <Point>TT413</Point>
-            <Point>D143T</Point>
             <Point>TEUKU</Point>
+            <Point>TT427</Point>
+            <Point>UPSOL</Point>
+            <Point>BUDGA</Point>
+            <Point>DUAMO</Point>
+            <Point>TT408</Point>
+            <Point>D098T</Point>
+            <Point>D137T</Point>
+            <Point>TT411</Point>
+            <Point>AKBUR</Point>
+            <Point>TT407</Point>
+            <Point>TT425</Point>
             <Point>AKPUM</Point>
+            <Point>D143T</Point>
+            <Point>UDOLI</Point>
             <Point>OTKUL</Point>
             <Point>IVRAR</Point>
             <Point>BELRI</Point>
-            <Point>D123T</Point>
-            <Point>ANSAX</Point>
-            <Point>DUAMO</Point>
-            <Point>UPSOL</Point>
-            <Point>BUDGA</Point>
-            <Point>BULVA</Point>
+            <Point>TT419</Point>
             <Point>TT414</Point>
             <Point>UDODO</Point>
-            <Point>TASEK</Point>
-            <Point>D237T</Point>
             <Point>OPUNG</Point>
-            <Point>D151T</Point>
-            <Point>EMREB</Point>
-            <Point>TT408</Point>
-            <Point>TENOM</Point>
-            <Point>TT409</Point>
+            <Point>D237T</Point>
+            <Point>TT413</Point>
             <Point>IRMUS</Point>
+            <Point>D123T</Point>
+            <Point>D151T</Point>
+            <Point>TT409</Point>
             <Point>AVDIN</Point>
-            <Point>D098T</Point>
-            <Point>D137T</Point>
+            <Point>TASEK</Point>
+            <Point>TENOM</Point>
+            <Point>ANSAX</Point>
             <Point>URDAM</Point>
-            <Point>UDOLI</Point>
-            <Point>TT410</Point>
-            <Point>AKBUR</Point>
+            <Point>VAVDO</Point>
+            <Point>BULVA</Point>
         </Label>
     </Map>
 </Maps>
