@@ -8,10 +8,12 @@ import math
 parser = argparse.ArgumentParser()
 parser.add_argument('--icao', type=str, required=True, help='4 letter ICAO code')
 parser.add_argument('--suicide', type=str)
+parser.add_argument('--colourful', action='store_true')
 args = parser.parse_args()
 
 icao = args.icao.upper()
 suicide = args.suicide
+colourful = args.colourful
 
 dir_path = "Output"
 os.makedirs(dir_path, exist_ok=True)
@@ -193,6 +195,10 @@ for i, line in enumerate(lines):
                                 map_elem.append(comment)
                                 line_elem = ET.SubElement(map_elem, "Line")
                                 line_elem.set("Pattern", "Dotted")
+                                
+                                if colourful: 
+                                    line_elem.set("CustomColourName", "NoiseTurquoise")
+
                                 line_elem.text = r_coords + '/'
 
                                 waypoints = sid_lines[sid_lines.index(sid_line)+1:]
@@ -228,6 +234,10 @@ for i, line in enumerate(lines):
                                 map_elem.append(comment)
                                 line_elem = ET.SubElement(map_elem, "Line")
                                 line_elem.set("Pattern", "Dashed")
+
+                                if colourful: 
+                                    line_elem.set("CustomColourName", "MellowYellow")
+
                                 line_elem.text = ''  
 
                                 waypoints = star_lines[star_lines.index(star_line)+1:]
@@ -268,6 +278,10 @@ for i, line in enumerate(lines):
                                 map_elem.append(comment)
                                 line_elem = ET.SubElement(map_elem, "Line")
                                 line_elem.set("Pattern", "Dotted")
+
+                                if colourful: 
+                                    line_elem.set("CustomColourName", "NoiseTurquoise")
+
                                 line_elem.text = opposite_r_coords + '/'
 
                                 waypoints = sid_lines[sid_lines.index(sid_line)+1:]
@@ -303,6 +317,10 @@ for i, line in enumerate(lines):
                                 map_elem.append(comment)
                                 line_elem = ET.SubElement(map_elem, "Line")
                                 line_elem.set("Pattern", "Dashed")
+
+                                if colourful: 
+                                    line_elem.set("CustomColourName", "MellowYellow")
+
                                 line_elem.text = ''  
                                 
                                 waypoints = star_lines[star_lines.index(star_line)+1:]
