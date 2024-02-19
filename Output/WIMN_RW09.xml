@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maps>
+    <Map Type="System" Name="WIMN_RW09" Priority="3" Center="+02.2611+098.9947">
+        <Runway Name="09">
+            <Threshold Name="09" Position="+02.2602+098.9743" ExtendedCentrelineTrack="273" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
+            <Threshold Name="27" Position="+02.2591+098.9981" />
+        </Runway>
+        <!--SID: ISVU1C, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/ISVUR</Line>
+        <!--SID: LUHU1B, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/LUHUT</Line>
+        <!--SID: MEDI1J, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/MEDIA</Line>
+        <!--SID: MOZE1A, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/MOZES</Line>
+        <!--SID: NOKE1J, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/NOKEL</Line>
+        <!--SID: OMBE1C, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/OMBES</Line>
+        <!--SID: POMI1A, Runway: 09-->
+        <Line Pattern="Dotted">+02.2591+098.9981/POMIG</Line>
+        <!--STAR: AKPE1C, Runway: 09-->
+        <Line Pattern="Dashed">AKPER/SLG/EGARU</Line>
+        <!--STAR: DOTM1C, Runway: 09-->
+        <Line Pattern="Dashed">DOTMA/SLG/EGARU</Line>
+        <!--STAR: ISVU1E, Runway: 09-->
+        <Line Pattern="Dashed">ISVUR/D354Y/SLG/EGARU</Line>
+        <!--STAR: MEDI1L, Runway: 09-->
+        <Line Pattern="Dashed">MEDIA/SLG/EGARU</Line>
+        <!--STAR: MOZE1C, Runway: 09-->
+        <Line Pattern="Dashed">MOZES/SLG/EGARU</Line>
+        <!--STAR: NOKE1L, Runway: 09-->
+        <Line Pattern="Dashed">NOKEL/D142Y/SLG/EGARU</Line>
+        <!--STAR: TOGA1B, Runway: 09-->
+        <Line Pattern="Dashed">TOGAR/SLG/EGARU</Line>
+        <Symbol Type="SolidTriangle">
+            <Point>MOZES</Point>
+            <Point>POMIG</Point>
+            <Point>TOGAR</Point>
+            <Point>D354Y</Point>
+            <Point>AKPER</Point>
+            <Point>SLG</Point>
+            <Point>EGARU</Point>
+            <Point>NOKEL</Point>
+            <Point>D142Y</Point>
+            <Point>DOTMA</Point>
+            <Point>OMBES</Point>
+            <Point>LUHUT</Point>
+            <Point>MEDIA</Point>
+            <Point>ISVUR</Point>
+        </Symbol>
+    </Map>
+    <Map Type="System" Name="WIMN_RW09_NAMES" Priority="3" Center="+02.2611+098.9947">
+        <Label>
+            <Point>MOZES</Point>
+            <Point>POMIG</Point>
+            <Point>TOGAR</Point>
+            <Point>D354Y</Point>
+            <Point>AKPER</Point>
+            <Point>SLG</Point>
+            <Point>EGARU</Point>
+            <Point>NOKEL</Point>
+            <Point>D142Y</Point>
+            <Point>DOTMA</Point>
+            <Point>OMBES</Point>
+            <Point>LUHUT</Point>
+            <Point>MEDIA</Point>
+            <Point>ISVUR</Point>
+        </Label>
+    </Map>
+</Maps>

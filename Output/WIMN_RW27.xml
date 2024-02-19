@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maps>
+    <Map Type="System" Name="WIMN_RW27" Priority="3" Center="+02.2611+098.9947">
+        <Runway Name="27">
+            <Threshold Name="27" Position="+02.2591+098.9981" ExtendedCentrelineTrack="93" ExtendedCentrelineLength="12" ExtendedCentrelineWidth="1" ExtendedCentrelineTickInterval="1" />
+            <Threshold Name="09" Position="+02.2602+098.9743" />
+        </Runway>
+        <!--SID: ISVU1D, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/ISVUR</Line>
+        <!--SID: LUHU1C, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/LUHUT</Line>
+        <!--SID: MEDI1K, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/MEDIA</Line>
+        <!--SID: MOZE1B, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/SLG/MOZES</Line>
+        <!--SID: NOKE1K, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/NOKEL</Line>
+        <!--SID: OMBE1D, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/SLG/EGISI/OMBES</Line>
+        <!--SID: POMI1B, Runway: 27-->
+        <Line Pattern="Dotted">+02.2602+098.9743/POMIG</Line>
+        <!--STAR: AKPE1D, Runway: 27-->
+        <Line Pattern="Dashed">AKPER/D130Y/D130S/+02.0568+099.2169/+02.1020+099.2486/+02.1520+099.2719/D107S/+02.1677+099.2772/IPLEB</Line>
+        <!--STAR: DOTM1D, Runway: 27-->
+        <Line Pattern="Dashed">DOTMA/D158Y/D158S/+01.9668+099.0929/+01.9919+099.1421/+02.0250+099.1862/+02.0654+099.2238/+02.1116+099.2539/+02.1624+099.2755/D107S/+02.1677+099.2772/IPLEB</Line>
+        <!--STAR: ISVU1F, Runway: 27-->
+        <Line Pattern="Dashed">ISVUR/D354Y/SLG/IPLEB</Line>
+        <!--STAR: MEDI1M, Runway: 27-->
+        <Line Pattern="Dashed">MEDIA/D107Y/IPLEB</Line>
+        <!--STAR: MOZE1D, Runway: 27-->
+        <Line Pattern="Dashed">MOZES/D065Y/IPLEB</Line>
+        <!--STAR: NOKE1M, Runway: 27-->
+        <Line Pattern="Dashed">NOKEL/D142Y/D137S/+02.0288+099.1903/+02.0698+099.2272/+02.1165+099.2565/+02.1677+099.2772/D107S/+02.1677+099.2772/IPLEB</Line>
+        <!--STAR: TOGA1C, Runway: 27-->
+        <Line Pattern="Dashed">TOGAR/D033Y/D033S/+02.5256+099.1468/+02.4917+099.1903/+02.4507+099.2273/+02.4039+099.2565/+02.3527+099.2772/+02.2988+099.2887/D089S/+02.2657+099.2910/IPLEB</Line>
+        <Symbol Type="SolidTriangle">
+            <Point>D107S</Point>
+            <Point>POMIG</Point>
+            <Point>TOGAR</Point>
+            <Point>NOKEL</Point>
+            <Point>OMBES</Point>
+            <Point>EGISI</Point>
+            <Point>D130S</Point>
+            <Point>D137S</Point>
+            <Point>D142Y</Point>
+            <Point>D354Y</Point>
+            <Point>AKPER</Point>
+            <Point>D130Y</Point>
+            <Point>LUHUT</Point>
+            <Point>ISVUR</Point>
+            <Point>MOZES</Point>
+            <Point>D089S</Point>
+            <Point>SLG</Point>
+            <Point>D033S</Point>
+            <Point>D107Y</Point>
+            <Point>DOTMA</Point>
+            <Point>D033Y</Point>
+            <Point>MEDIA</Point>
+            <Point>D065Y</Point>
+            <Point>IPLEB</Point>
+            <Point>D158S</Point>
+            <Point>D158Y</Point>
+        </Symbol>
+    </Map>
+    <Map Type="System" Name="WIMN_RW27_NAMES" Priority="3" Center="+02.2611+098.9947">
+        <Label>
+            <Point>D107S</Point>
+            <Point>POMIG</Point>
+            <Point>TOGAR</Point>
+            <Point>NOKEL</Point>
+            <Point>OMBES</Point>
+            <Point>EGISI</Point>
+            <Point>D130S</Point>
+            <Point>D137S</Point>
+            <Point>D142Y</Point>
+            <Point>D354Y</Point>
+            <Point>AKPER</Point>
+            <Point>D130Y</Point>
+            <Point>LUHUT</Point>
+            <Point>ISVUR</Point>
+            <Point>MOZES</Point>
+            <Point>D089S</Point>
+            <Point>SLG</Point>
+            <Point>D033S</Point>
+            <Point>D107Y</Point>
+            <Point>DOTMA</Point>
+            <Point>D033Y</Point>
+            <Point>MEDIA</Point>
+            <Point>D065Y</Point>
+            <Point>IPLEB</Point>
+            <Point>D158S</Point>
+            <Point>D158Y</Point>
+        </Label>
+    </Map>
+</Maps>
